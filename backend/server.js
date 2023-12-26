@@ -41,6 +41,19 @@ const firebaseConfig = {
   measurementId: process.env.FIREBASE_MEASUREID,
 };
 
+console.log('DB_HOST:',process.env.DB_HOST);
+console.log('DB_PORT:',process.env.DB_PORT);
+console.log('DB_USER:',process.env.DB_USER);
+console.log('DB_PW:',process.env.DB_PW);
+console.log('EMAIL_USER:',process.env.EMAIL_USER);
+console.log('EMAIL_PASS:',process.env.EMAIL_PASS);
+console.log('SOLAPI_AUTH:',process.env.SOLAPI_AUTH);
+console.log('SOLAPI_AUTH2:',process.env.SOLAPI_AUTH2);
+console.log('FIREBASE_APIKEY:',process.env.FIREBASE_APIKEY);
+console.log('FIREBASE_MSGID:',process.env.FIREBASE_MSGID);
+console.log('FIREBASE_APPID:',process.env.FIREBASE_APPID);
+console.log('FIREBASE_MEASUREID:',process.env.FIREBASE_MEASUREID);
+
 connection.connect();
 
 app.use(cors());
