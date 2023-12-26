@@ -1,6 +1,6 @@
 "use strict"
 
-let hostURL = 'http://localhost:3000/';
+const hostURL = 'http://13.209.122.249:3000/';
 
 const pointcolor = '#DB7C8D';
 // const frequencyColor = '#D9D9D9';
@@ -743,5 +743,3 @@ function handleResize() {
 
 handleResize();
 window.addEventListener('resize', handleResize);
-
-
