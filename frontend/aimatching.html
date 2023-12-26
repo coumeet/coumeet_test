@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="aimatching_style.css">
+    <script src="aimatching_script.js" defer></script>
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI matching</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+    <section class="aimatching">
+        <section class="aimatching_container">
+            <div class="aimatchingTitle_container">
+                <p class="aimatchingTitle">AI매칭</p>
+                <p class="aimatchingSubTitle">(기능 출시 준비중)</p>
+            </div>
+            <div class="aimatchingContent_container">
+                <p class="aimatchingContent_1">AI가 여러분의 매칭 데이터를 기반으로</p>
+                <p class="aimatching_content_1"><b>가장 잘 어울릴 매칭 상대를 추천</b>해줍니다</p>
+                <img src="img/16.png" alt="" class="aimatchingImg_1">
+                <p class="aimatchingContent_2">커밋 AI매칭은 현재 가장 <b>최상의 수준의 인공지능 솔루션을 활용</b>합니다</p>
+                <p class="aimatchingContent_2">(ChatGPT-4 turbo)</p>
+                <img src="img/17.png" alt="" class="aimatchingImg_2">
+                <p class="aimatchingContent_3"><b>기능 출시는 언제?</b></p>
+                <p class="aimatchingContent_3">AI매칭의 기능이 가치가 생기기 위해서는 <span class="highlight">충분한 매칭 데이터가 필요</span>합니다.</p>
+                <p class="aimatchingContent_3">서비스가 활성화되고 많은 데이터가 쌓이면 Beta 출시 예정입니다.</p>
+                <img src="img/18.png" alt="" class="aimatchingImg_3">
+                <p class="aimatchingContent_4">커밋 AI는 데이터 수집중입니다</p>
+                <p class="aimatchingContent_5">여러 분이 많이 이용해주실수록</p>
+                <p class="aimatchingContent_5">AI매칭 기능 출시 일정이 빨라집니다 :)</p>
+                <img src="img/19.png" alt="" class="aimatchingImg_4">
+            </div>
+        </section>
+    </section>
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+                // footer.html의 내용이 로드된 후에 footer_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "footer_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+</body>
+</html>

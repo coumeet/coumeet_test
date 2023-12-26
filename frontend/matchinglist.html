@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="matchinglist_style.css">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <script src="matchinglist_script.js" defer></script>
+    <title>Matching List</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });
+        // console.log(`login.html`);
+    </script>
+
+    <section class="mobileCategory_container">
+        <div class="mobileCategoryTitle_container">
+            <span class="mobileTitle">상세검색</span>
+            <i class="fa-solid fa-xmark" id="mobileCategoryXbtn" style="color: #ffffff;"></i>
+        </div>
+        <div class="mobileCategoriesContents_container">
+        </div>
+        <div class="mobileCategoryBtns_container">
+            <button class="mobileCategoryConfirmBtn" id="mobileCategoryResetBtn">
+                <i class="fa-solid fa-arrow-rotate-right" style="color: #000000;"></i>
+                <span>초기화</span>
+            </button>
+            <button class="mobileCategoryConfirmBtn" id="mobileCategoryConfirmBtn">적용하기</button>
+        </div>
+    </section>
+
+    <section class="categories_container">
+        <div class="category_container">
+            <div class="upCategory_container">
+                <button class="totalBtn">전체</button>
+                <div class="upcategoryselectBtn_container">
+                    <button class="ageBtn" data-category="age"><span>나이</span><i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                    <button class="heightBtn" data-category="height">키<i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                    <button class="regionBtn" data-category="region">사는곳<i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                    <button class="hobbyBtn" data-category="hobby">취미<i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                    <button class="mbtiBtn" data-category="mbti">MBTI<i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                </div>
+            </div>
+            <div class="downCategory_container">
+                <button class="favoriteBtn">찜한 사람</button>
+                <div class="downcategoryselectBtn_container">
+                    <button class="styleBtn" data-category="style">스타일<i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                    <button class="bodyTypeBtn" data-category="bodyType">체형<i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                    <button class="personalityBtn" data-category="personality">성격<i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                    <button class="drinkingBtn" data-category="drinking">음주<i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                    <button class="smokingBtn" data-category="smoking">흡연<i class="fa-solid fa-play fa-rotate-90" style="color: #d9d9d9;"></i></button>
+                </div>
+            </div>
+            <i class="fa-solid fa-filter-circle-xmark" id="filter" style="color: #524747;"></i>
+            <div class="categorySelect_container">
+                <div class="selectedCategory_container">
+                    <div class="selectedCategoryBtn_container">
+                        <!-- <button class="selected_1"><span>19세</span><i class="fa-solid fa-xmark"></i></button> -->
+                    </div>
+                    <button class="settingResetBtn">
+                        <i class="fa-solid fa-arrow-rotate-right" style="color: #000000;"></i>
+                        <span>초기화</span>
+                    </button>
+                </div>
+            </div>
+            <div class="categoryDetailSelect_container" style="display: none;">
+                <div class="selectBtn_container">
+                    <!-- <button class="select_1">
+                        <i class="fa-regular fa-square" style="color: #000000;"></i>
+                        <span>경기도</span>
+                    </button> -->
+                </div>
+                <div class="functionBtn_container">
+                    <button class="selectCancelBtn">선택해제</button>
+                    <button class="categoryConfirmBtn">적용하기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="matchilgListTotal_container">
+        <section class="matchingList_container">
+            <!-- <div class="matchingPerson_container">
+                <div class="profileImg_container">
+                    <i class="fa-regular fa-heart" style="color: #ffffff;"></i>
+                    <img src="img/a.png" alt="">
+                </div>
+                <p class="regionInfo">경기도 용인시 수지구</p>
+                <div class="profileInfo_container">
+                    <p class="nicknameInfo"><span class="infoTitle">닉네임 : </span><span class="infoText">비트킴입니당</span> </p>
+                    <p class="AgeInfo"><span class="infoTitle">나이 : </span><span class="infoText">33 살</span></p>
+                    <p class="heightInfo"><span class="infoTitle">키 : </span><span class="infoText">177cm</span></p>
+                    <p class="occupationInfo"><span class="infoTitle">직업 : </span><span class="infoText">전문직(변호사, 검판사 등)</span></p>
+                    <p class="mbtiInfo"><span class="infoTitle">MBTI : </span><span class="infoText">ESTJ</span></p>
+                    <p class="styleInfo"><span class="infoTitle">스타일 : </span><span class="infoText">깔끔함</span></p>
+                    <p class="bodyTypeInfo"><span class="infoTitle">체형 : </span><span class="infoText">보통</span></p>
+                    <p class="personalityInfo"><span class="infoTitle">성격 : </span><span class="infoText">지적인, 차분한, 유머있는</span></p>
+                    <p class="drinkingInfo"><span class="infoTitle">음주 : </span><span class="infoText">가끔 마심</span></p>
+                </div>
+                <div class="profileHobbyInfo_container">
+                    <div class="hobbyInfo"><span>클라이밍</span></div>
+                    <div class="hobbyInfo"><span>작문,시쓰기</span></div>
+                    <div class="hobbyInfo"><span>등산</span></div>
+                    <div class="hobbyInfo"><span>스킨스쿠버</span></div>
+                    <div class="hobbyInfo"><span>드라이빙</span></div>
+                    <div class="hobbyInfo"><span>마라톤</span></div>
+                </div>
+            </div> -->
+        </section>
+    </section>
+
+    <section class="pagination">
+        <!-- <ul>
+            <li class="prev"><</li>
+            <li class="page active">1</li>
+            <li class="page">2</li>
+            <li class="page">3</li>
+            <li class="next">></li>
+        </ul> -->
+    </section>
+
+    <section class="resultNotFound">
+        <div class="resultNotFound_container">
+            <p class="resultNotFoundMsg">조건에 맞는 결과가 없습니다.<br>조건을 변경해서 나의 매칭 상대를 찾아보세요 :)</p>
+            <img src="img/12.png" alt="" class="resultNotFoundImg">
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+                // footer.html의 내용이 로드된 후에 footer_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "footer_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+</body>
+</html>

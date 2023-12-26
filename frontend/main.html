@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main_style.css">
+    <script src="main_script.js" defer></script>
+    <title>Main Page</title>
+</head>
+<body>
+
+    <div data-include-path="navbar.html"></div>
+
+    <script>
+        window.addEventListener('load', function() {
+            let allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                let includePath = el.dataset.includePath;
+                if(includePath) {
+                    let xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if(this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+
+    <section class="left_container">
+        <img src="" alt="" class="img">
+        <div class="upBtn_container">
+            <button class="userListBtn">이용자목록📋</button>
+            <button class="matchingListBtn">매칭현황💑</button>
+        </div>
+        <h3 class="message"></h3>
+        <div class="id_container">
+            <label for="id">아이디:</label>
+            <span class="id"></span>
+        </div>
+        <div class="mbti_container">
+            <label for="mbti">MBTI:</label>
+            <span class="mbti"></span>
+        </div>
+        <div class="age_container">
+            <label for="age">나이(생년월일):</label>
+            <span class="age"></span>
+        </div>
+        <div class="region_container">
+            <label for="region">지역:</label>
+            <span class="region"></span>
+        </div>
+        <div class="height_container">
+            <label for="height">키:</label>
+            <span class="height"></span>
+        </div>
+        <div class="occupation_container">
+            <label for="occupation">직업:</label>
+            <span class="occupation"></span>
+        </div>
+        <div class="workplace_container">
+            <label for="workplace">직장:</label>
+            <span class="workplace"></span>
+        </div>
+        <div class="education_container">
+            <label for="education">학교:</label>
+            <span class="education"></span>
+        </div>
+        <div class="religion_container">
+            <label for="religion">종교:</label>
+            <span class="religion"></span>
+        </div>
+        <div class="drinking_container">
+            <label for="drinking">음주:</label>
+            <span class="drinking"></span>
+        </div>
+        <div class="smoking_container">
+            <label for="smoking">흡연:</label>
+            <span class="smoking"></span>
+        </div>
+        <div class="blood_type_container">
+            <label for="blood_type">혈액형:</label>
+            <span class="blood_type"></span>
+        </div>
+        <div class="body_type_container">
+            <label for="body_type">체형:</label>
+            <span class="body_type"></span>
+        </div>
+        <div class="style_container">
+            <label for="style">스타일:</label>
+            <span class="style"></span>
+        </div>
+        <div class="button_container">
+            <button class="logoutBtn">로그아웃</button>
+            <button class="withdrawBtn">회원탈퇴</button>
+        </div>   
+    </section>
+    <section class="searchMate">
+        <section class="categoryBtn_container">
+            <button class="recentBtn">최신순</button>
+            <button class="regionBtn">지역</button>
+            <button class="heightBtn">키</button>
+            <button class="mbtiBtn">MBTI</button>
+            <button class="occupationBtn">직업</button>
+        </section>
+        <section class="userList_container">
+        </section>
+    </section>
+    <section class="matchingList" style="display: none;">
+        <h3>매칭현황💑</h3>
+        <section class="matchingCategoryBtn_container">
+            <button class="offerBtn">신청목록</button>
+            <button class="receiveBtn">받은목록</button>
+            <button class="matchingBtn">매칭목록</button>
+        </section>
+        <seciotn class="matchingList_user_container">
+        </seciotn>
+    </section>
+</body>
+</html>

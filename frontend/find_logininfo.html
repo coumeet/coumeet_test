@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="find_logininfo_style.css">
+    <script src="find_logininfo_script.js" defer></script>
+    <title>Find LoginInfo</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });    
+    </script>
+
+    <section class="findInfo">
+        <section class="findInfo_container">
+            <p class="findInfoTitle">아이디 비밀번호 찾기</p>
+            <section class="findInfoCategoryBtns_container">
+                <button class="categoryBtn" id="findId">아이디</button>
+                <button class="categoryBtn" id="findPw">비밀번호</button>
+            </section>
+            <p class="explainMsg">인증받은 번호로 아이디(이메일 주소)를 전달드립니다.</p>
+            <div class="inputfield_container">
+                <div class="findIdInput_container">
+                    <div class="input_container" id="nameInput_container">
+                        <div class="title">이름</div>
+                        <input type="text" class="inputfield" id="nameInput" placeholder="이름을 입력해주세요"></input>
+                    </div>
+                    <div class="input_container" id="phoneInput_container">
+                        <div class="title">연락처</div>
+                        <input type="text" class="inputfield" id="phoneInput" placeholder="연락처를 입력해주세요"></input>
+                    </div>
+                </div>
+                <div class="findPwInput_container">
+                    <div class="input_container" id="emailInput_container">
+                        <div class="title">이메일</div>
+                        <input type="email" class="inputfield" id="emailInput" placeholder="아이디(이메일)를 입력해주세요"></input>
+                    </div>
+                    <div class="input_container" id="authNumberInput_container">
+                        <div class="title">인증번호</div>
+                        <input type="text" class="inputfield" id="authNumberInput" placeholder="인증번호를 입력해주세요"></input>
+                    </div>
+                    <div class="input_container" id="changePwInput_container">
+                        <div class="title">새 비밀번호</div>
+                        <input type="password" class="inputfield" id="changePwInput" placeholder="새로운 비밀번호를 입력해주세요"></input>
+                    </div>
+                    <div class="input_container" id="changePw2Input_container">
+                        <div class="title">새 비밀번호 확인</div>
+                        <input type="password" class="inputfield" id="changePw2Input" placeholder="비밀번호 확인을 해주세요"></input>
+                    </div>
+                </div>
+            </div>
+            <p class="errorMsg">이것은 오류 메시지인 것이여</p>
+            <button class="confirmBtn">아이디(이메일 주소)받기</button>
+            <button class="confirmBtn" id="authNumberBtn">인증번호 확인</button>
+            <button class="confirmBtn" id="pwChangeBtn">비밀번호 재설정 완료</button>
+        </section>
+    </section>
+</body>
+</html>

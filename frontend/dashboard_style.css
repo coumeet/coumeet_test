@@ -1,0 +1,598 @@
+:root {
+    --button-color : #DAEBFF;
+    --button-hover-color : #99C8FF;
+    --button-hover-outline-color : #81BBFF;
+    --subBtn-color : #767373;
+    --point-color : #DB7C8D;
+    --frequency-color : #D9D9D9;
+    --selectBtn-color : #F9F2F2;
+
+    --width-size : 400px;
+    --input-height-size : 45px;
+
+    --font-bigSize : 25px;
+    --font-middleSize : 20px;
+    --font-normalSize : 18px;
+    --font-size : 16px;
+    --font-smallSize : 14px;
+    --font-tooSmallSize : 12px;
+    --font-theSmallestSize : 10px;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+    font-family: Inter;
+    height: 100vh;
+}
+
+.listBtns_container {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.btns_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.btns_container button {
+    margin: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: transparent;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btns_container button:hover {
+    color: var(--point-color);
+    transform: scale(1.01);
+    text-decoration: underline;
+    text-underline-offset: 5px; 
+    text-decoration-thickness: 2px;
+}
+
+.btns_container button.selected {
+    color: var(--point-color);
+    transform: scale(1.01);
+    text-decoration: underline;
+    text-underline-offset: 5px; 
+    text-decoration-thickness: 2px;
+}
+
+.userList_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.user_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 2px solid var(--frequency-color);
+    border-radius: 10px;
+    padding: 20px;
+
+    transition: transform 0.2s; /* 변환(transform) 및 그림자(box-shadow)에 트랜지션 적용 */
+    /* 기본 스타일 */
+    transform: scale(1);
+    z-index: 1;
+
+    margin-bottom: 20px;
+}
+
+.user_container:hover {
+    /* hover 상태일 때의 스타일 */
+    transform: scale(1.03); /* 약간 커지는 스케일 값 설정 */
+}
+
+.content_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.userImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 6px;
+
+    margin-right: 10px;
+
+    /* filter: blur(8px); */
+}
+
+.userInfo_container {
+    width: 100%;
+    cursor: pointer;
+}
+
+.leftContent_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.status_container {
+    margin-bottom: 10px;
+}
+
+.status_container span {
+    color: var(--point-color);
+    font-weight: bold;
+}
+
+.regionInfo {
+    font-weight: bold;
+    font-size: var(--font-tooSmallSize);
+    color: var(--subBtn-color);
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.profileInfo_container p {
+    margin: 0;
+    font-size: var(--font-tooSmallSize);
+}
+
+.profileHobbyInfo_container {
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin-left: 10px;
+    align-items: flex-start; /* 요소를 상단으로 정렬합니다 */
+    justify-content: center;
+    height: 100%;
+}
+
+.profileHobbyInfo_container div {
+    width: 61px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    margin: 2px;
+    background-color: var(--point-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileHobbyInfo_container span {
+    font-size: var(--font-theSmallestSize);
+    color: white;
+}
+
+.infoTitle {
+    color: var(--subBtn-color);
+}
+
+.infoText {
+    font-weight: bold;
+}
+
+.rightBtn_container {
+    margin-left: 350px;
+    margin-right: 30px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightBtn_container p {
+    font-size: var(--font-smallSize);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.confirmBtn {
+    width: 175px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    border: transparent;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    margin-bottom: 10px;
+}
+
+.confirmBtn:hover {
+    background-color: var(--button-hover-color);
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    height: 50px;
+}
+
+.pagination ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: var(--point-color);
+    font-size: var(--font-smallSize);
+    /* border: 1px solid #ccc; */
+}
+
+.pagination li:hover {
+    font-weight: bold;
+}
+
+.pagination li.active {
+    color: black;
+}
+
+.listMsg {
+    margin: 0 auto;
+    margin-top: 300px;
+}
+
+.resultNotFound {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+
+.resultNotFound_container {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.resultNotFoundMsg {
+    text-align: center;
+    color: var(--point-color);
+}
+
+.resultNotFoundImg {
+    width: 400px;
+    height: auto;
+}
+
+/* 팝업창 꾸미기 */
+.popup_container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.popupTitle {
+    font-size: var(--font-normalSize);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.popupSubTitle {
+    margin-top: 10px;
+}
+
+.fa-rectangle-xmark {
+    position: absolute;
+    top: 10px; /* 필요한 위치로 조정 */
+    right: 10px; /* 필요한 위치로 조정 */
+    font-size: 20px; /* 원하는 크기로 조정 */
+    cursor: pointer;
+}
+
+.fa-rectangle-xmark:hover {
+    transform: scale(1.02);
+}
+
+.toggleContent_container {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.toggleContent_container:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.confrimBtn {
+    width: 100%;
+    border-radius: 10px;
+    border: transparent;
+    background-color: var(--point-color);
+    font-size: var(--font-size);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.confrimBtn:hover {
+    background-color: #D84962;
+}
+
+.toggleContent {
+    margin-left: 5px;
+}
+
+.errorMsg {
+    display: none;
+    font-size: var(--font-tooSmallSize);
+    color: var(--point-color);
+}
+
+
+#reportInput_container {
+    /* background-color: rebeccapurple; */
+    height: 100px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    border : 1px solid black;
+    border-radius: 10px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#reportInput {
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+    border: transparent;
+    resize: none;
+    font-size: var(--font-smallSize);
+    font-family: Inter;
+}
+
+#reportInput:focus {
+    outline: none;
+}
+
+#reportNOC {
+    margin-left: auto;
+    font-size: var(--font-tooSmallSize);
+}
+
+.matchingPoint_container {
+    border: 2px solid var(--frequency-color);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.userPoint_container, 
+.usagePoint_container, 
+.remainPoint_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.userPoint_container, 
+.usagePoint_container {
+    margin-bottom: 20px;
+}
+
+.usagePoint_container {
+    color: var(--point-color);
+}
+
+/* .usagePoint {
+    width: 50%;
+} */
+
+.remainPoint_container {
+    margin-bottom: 0;
+    color: var(--button-hover-outline-color);
+    font-weight: bold;
+    border-top: 1px solid var(--button-hover-color);
+    padding-top: 10px;
+}
+
+.spenPointTitle_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.usagePointTitle, 
+.usagePointSubtitle {
+    margin: 0;
+}
+
+.usagePointSubtitle {
+    font-size: var(--font-theSmallestSize);
+}
+
+.rechargeBtn {
+    border: transparent;
+    background-color: transparent;
+    font-size: var(--font-smallSize);
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: blue;
+
+}
+
+.rechargeBtn:hover {
+    transform: scale(1.02);
+}
+
+.profileInfoContent_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.emphasis {
+    background-color: rgb(255, 255, 0, 0.2);
+}
+
+#matchingAcceptUsagePoint {
+    min-width: 60px;
+    text-align: right;
+}
+
+.hideInfo {
+    display: none;
+}
+
+.matchingOfferTypeInfo {
+    display: none;
+}
+
+/* 테블릿 */
+@media screen and (max-width: 1023px) {
+
+    .list_container {
+        width: 90%;
+    }
+
+    .rightBtn_container {
+        margin-left: 5%;
+    }
+
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+
+    .listBtns_container {
+        margin-top: 80px;
+    }
+
+    .btns_container button {
+        margin: 5px;
+        min-width: 80px;
+        font-size: 16px;
+    }
+
+    .btns_container {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .resultNotFoundImg {
+        width: 350px;
+    }
+
+    .content_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .leftContent_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .rightBtn_container {
+        margin-top: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .status_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .leftContent_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .userImg {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 180px;
+        height: 180px;
+    }
+
+    .profileInfoContent_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profileHobbyInfo_container {
+        display: flex;
+        flex-direction: row;
+        width: 200px;
+        margin-left: 0;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+
+    .profileInfo_container p {
+        font-size: 13px;
+    }
+
+    .picture_container img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .popup_container {
+        width: 70%;
+        padding: 20px;
+    }
+}

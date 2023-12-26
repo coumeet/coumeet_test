@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="faq_style.css">
+    <script src="faq_script.js" defer></script>
+    <title>FAQ</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });    
+    </script>
+
+    <section class="faq">
+        <div class="faq_container">
+            <p class="faqTitle">FAQ 문의</p>
+            <section class="faqCategoryBtns_cotainer">
+                <!-- <button class="categoryBtn" id="matchingMethod">매칭 방식</button>
+                <button class="categoryBtn" id="cost">비용</button>
+                <button class="categoryBtn" id="payAndRefund">결제 및 환불</button>
+                <button class="categoryBtn" id="bugReport">버그 신고</button> -->
+            </section>
+            <section class="faqContent_container">
+                <!-- <div class="faqDetailContent_container">
+                    <div class="faqContentTitle_container">
+                        <i class="fa-solid fa-angle-right fa-rotate-90" style="color: #DB7C8D;"></i>
+                        <span class="faqContentTitle">비용은 환불되지 않아용ㅋㅋㅋㅋ</span>
+                    </div>
+                    <p class="faqContent">비용은 환불되지 않아용?ㅋㅋ 왜인줄 아세용?ㅋㅋㅋ 제 마음이에용 ㅋㅋㅋ <br>제가 개발했기 때문이죵 ㅋㅋㅋㅋ 오케이?ㅋㅋㅋㅋㅋ</p>
+                </div> -->
+            </section>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+                // footer.html의 내용이 로드된 후에 footer_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "footer_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+</body>
+</html>

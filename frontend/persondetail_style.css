@@ -1,0 +1,653 @@
+:root {
+    --button-color : #DAEBFF;
+    --button-hover-color : #99C8FF;
+    --button-hover-outline-color : #81BBFF;
+    --subBtn-color : #767373;
+    --point-color : #DB7C8D;
+    --frequency-color : #D9D9D9;
+    --selectBtn-color : #F9F2F2;
+
+    --width-size : 400px;
+    --input-height-size : 45px;
+
+    --font-bigSize : 25px;
+    --font-middleSize : 20px;
+    --font-normalSize : 18px;
+    --font-size : 16px;
+    --font-smallSize : 14px;
+    --font-tooSmallSize : 12px;
+    --font-theSmallestSize : 10px;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+}
+
+.personDetail {
+    margin-top: 130px;  /* Navbar 밑으로 위치 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+}
+
+.personDetail_container {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+
+.introduceMeInfoDetailContent_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.favoriteCount_container {
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    border-radius: 10px;
+
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.favoriteCount_container i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.favoriteCount_container:hover {
+    background-color: var(--selectBtn-color);
+}
+
+.letter_container {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--selectBtn-color);
+    border-radius: 10px;
+
+    width: 95%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.letter_container .letterTitle {
+    font-weight: bold;
+    font-size: var(--font-size);
+    margin: 0;
+}
+
+.letter_container .letterMsg {
+    font-size: var(--font-smallSize);
+    margin-bottom: 0;
+}
+
+.introduceMe_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.introduceMeTitle {
+    text-align: center;    
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.introduceMeInfo_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.introduceMeInfoImg {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+    margin: 10px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.introduceMeInfoDetail_container {
+    width: 40%;
+    margin: 10px;
+}
+
+
+.introduceMeInfo_title {
+    color: var(--subBtn-color);
+}
+
+.introduceMeInfo_content {
+    font-weight: bold;
+}
+
+.introduceMeInfo_boxContent_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.introduceMeInfo_boxContent {
+    width:100px;
+    height: 25px;
+
+    background-color: var(--point-color);
+    font-size: var(--font-smallSize);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+
+    margin: 2px;
+
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.datingStyle_container {
+    margin-top: 150px;
+    display: flex;
+}
+
+.datingStyle_title {
+    text-align: center;
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.datingStyleSubtitle {
+    text-align: center;
+    font-size: var(--font-smallSize);
+    color: var(--point-color);
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--frequency-color);
+    margin-top: 5px;
+}
+
+.datingStyleContent_container {
+    width: 100%;
+    height: auto;
+}
+
+.datingStyleBtns_container {
+    width: 100%;
+    margin-top: 6%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-around;
+}
+
+.dating_title {
+    font-size: var(--font-smallSize);
+    font-weight: bold;
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+.datingStyleImg {
+    width: 200px;
+    height: calc(200px * 1.92);
+    margin-top: 250px;
+}
+
+.dating_btn {
+    width: auto;
+    padding: 10px 10px;
+    height: auto;
+    border-radius: 10px;
+    background-color: var(--selectBtn-color);
+    border: transparent;
+    margin: 5px;
+}
+
+.dating_btn.selected {
+    background-color: var(--point-color);
+    font-weight: bold;
+    color: white;
+}
+
+.manners_container {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.mannersTitle {
+    text-align: center;
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.mannersSubtitle {
+    text-align: center;
+    font-size: var(--font-smallSize);
+    color: var(--point-color);
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--frequency-color);
+    margin-top: 5px;
+}
+
+.mannersInfo_container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    align-self: center;
+}
+
+.mannersInfoTitle {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.mannerDetail_container {
+    margin-bottom: 20px;
+}
+
+.additionalInfo_container {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.additionalInfoTitle {
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.additionalInfoSubTitle {
+    font-size: var(--font-smallSize);
+    color: var(--point-color);
+    margin: 0;
+}
+
+.additionalInfoDetail_container {
+    margin-top: 30px;
+}
+
+.picture_container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture_container img {
+    margin: 10px;
+    padding: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 6px;
+    filter: blur(8px);
+}
+
+.picture_container img.pay {
+    filter: blur(0px);
+}
+
+.additionalInfoDetail {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #7700ff
+}
+
+.phoneInfoContentMsg {
+    font-size: var(--font-tooSmallSize);
+    font-weight: bold;
+    margin-top: 0px;
+    color: var(--point-color);
+}
+
+.confirmBtns_container {
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.confirmBtn_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.confirmBtn {
+    width: 175px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    border: transparent;
+    margin: 10px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirmBtn:hover {
+    background-color: var(--button-hover-color);
+}
+
+.statusMsg {
+    display: none;
+    margin: 0;
+    font-size: var(--font-smallSize);
+    color: var(--point-color);
+}
+
+/* 팝업창 꾸미기 */
+.popup_container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.popupTitle {
+    font-size: var(--font-normalSize);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.popupSubTitle {
+    margin-top: 10px;
+}
+
+.fa-rectangle-xmark {
+    position: absolute;
+    top: 10px; /* 필요한 위치로 조정 */
+    right: 10px; /* 필요한 위치로 조정 */
+    font-size: 20px; /* 원하는 크기로 조정 */
+    cursor: pointer;
+}
+
+.fa-rectangle-xmark:hover {
+    transform: scale(1.02);
+}
+
+.toggleContent_container {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.toggleContent_container:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.confrimBtn {
+    width: 100%;
+    border-radius: 10px;
+    border: transparent;
+    background-color: var(--point-color);
+    font-size: var(--font-size);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.confrimBtn:hover {
+    background-color: #D84962;
+}
+
+.toggleContent {
+    margin-left: 5px;
+}
+
+.errorMsg {
+    display: none;
+    font-size: var(--font-tooSmallSize);
+    color: var(--point-color);
+}
+
+
+#reportInput_container {
+    /* background-color: rebeccapurple; */
+    height: 100px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    border : 1px solid black;
+    border-radius: 10px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#reportInput {
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+    border: transparent;
+    resize: none;
+    font-size: var(--font-smallSize);
+    font-family: Inter;
+}
+
+#reportInput:focus {
+    outline: none;
+}
+
+#reportNOC {
+    margin-left: auto;
+    font-size: var(--font-tooSmallSize);
+}
+
+.matchingPoint_container {
+    border: 2px solid var(--frequency-color);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.userPoint_container, 
+.usagePoint_container, 
+.remainPoint_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.userPoint_container, 
+.usagePoint_container {
+    margin-bottom: 20px;
+}
+
+.usagePoint_container {
+    color: var(--point-color);
+}
+
+.remainPoint_container {
+    margin-bottom: 0;
+    color: var(--button-hover-outline-color);
+    font-weight: bold;
+    border-top: 1px solid var(--button-hover-color);
+    padding-top: 10px;
+}
+
+.spenPointTitle_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.usagePointTitle, 
+.usagePointSubtitle {
+    margin: 0;
+}
+
+.usagePointSubtitle {
+    font-size: var(--font-theSmallestSize);
+}
+
+.rechargeBtn {
+    border: transparent;
+    background-color: transparent;
+    font-size: var(--font-smallSize);
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: blue;
+
+}
+
+.rechargeBtn:hover {
+    transform: scale(1.02);
+}
+
+#personalityBox {
+    background-color: var(--button-hover-outline-color);
+}
+
+#matchingAcceptUsagePoint {
+    min-width: 60px;
+    text-align: right;
+}
+
+/* 테블릿 */
+@media screen and (max-width: 1023px) {
+
+    .introduceMeInfoDetail_container {
+        width: 30%;
+    }
+
+    .personDetail {
+        margin-top: 80px;
+    }
+
+    .personDetail_container {
+        width: 90%;
+    }
+
+    .introduceMeInfo_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .introduceMeInfoDetailContent_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .picture_container img {
+        width: 30%;
+        height: 30%;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+    .personDetail_container {
+        width: 95%;
+    }
+
+    .letter_container {
+        width: 90%;
+    }
+
+    .introduceMeInfoImg {
+        width: 350px;
+    }
+
+    .datingStyleBtns_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .datingStyleImg {
+        margin-top: 50px;
+    }
+
+    .picture_container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .picture_container img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .popup_container {
+        width: 70%;
+        padding: 20px;
+    }
+
+    .confirmBtns_container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .datingStyle_container {
+        margin-top: 50px;
+    }
+
+    .introduceMeInfo_container {
+        margin-top: 50px;
+    }
+
+}

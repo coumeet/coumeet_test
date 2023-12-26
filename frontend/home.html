@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home_style.css">
+    <script src="home_script.js" defer></script>
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+</head>
+<body>
+
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+    <section class="mainBanner_container">
+        <div class="msg_container">
+            <p class="mainMsg">직장인들의 연인 찾는 공간, 커밋</p>
+            <p class="subMsg">나와 같은 방향을 바라보며 평생을 함께 할 연인이 여러분의 매칭 신청을 기다리고 있습니다.</p>
+        </div>
+        <img src="./img/11.gif" alt="" class="mainBannerImg">
+    </section>
+
+    <section class="eventBanner_container">
+        <div class="eventMsg_container">
+            <img src="./img/2.png" alt="" class="eventBannerImg">
+            <div class="eventMsgContent_container">
+                <p class="eventMainMsg">서비스 오픈 이벤트로 <br> 가입만 하면 3000P 지급!</p>
+                <p class="eventSubMsg">매칭 3회 무료 금액 / 기간 : 2023.12.31까지</p>
+            </div>
+        </div>
+        <p class="freeMsg">FREE</p>
+    </section>
+
+    <section class="coumeetInfo_container">
+        <div class="coumeetInfoMsg_container">
+            <img src="./img/logo.png" alt="" class="coumeetInfoLogo">
+            <p class="coumeetInfoMsg_1">
+                <b>Couple + Meet</b>의 약자로 <b>‘커플이 되어 만난다’</b>는 것을 의미입니다.
+            </p>
+            <p class="coumeetInfoMsg_2">
+                주변에 충분히 매력적이고 좋은 사람임에도 불구하고<br>
+                기회가 없어서 인연을 찾지 못하는 안타까운 사람을 많이 보았습니다.<br>
+                <br>
+                그런 분들이 <b>본인의 인연을 찾을 수 있는 장을 마련</b>해주고 싶었습니다.            </p>
+        </div>
+        <img src="./img/3.png" alt="" class="coumeetInfoImg">
+    </section>
+
+    <section class="coumeetInfoBoxes_container">
+        <div class="box">
+            <p class="box_titleMsg"><b>까다로운 가입절차</b></p>
+            <p class="box_subMsg">가입 시 입력해야 할 정보가 34가지입니다.
+                재직증명서 등 제출해야 합니다.
+                승인이 된 이용자만 사용이 가능합니다. </p>
+        </div>
+        <div class="box">
+            <p class="box_titleMsg"><b>매칭 신청이 유료입니다</b></p>
+            <p class="box_subMsg">커밋은 비용을 충분히 지불할 만큼 진심으로 인연을 찾고 싶은 분만 원합니다. </p>
+        </div>
+        <div class="box">
+            <p class="box_titleMsg"><b>매칭 매너 후기를 받습니다</b></p>
+            <p class="box_subMsg">커밋은 매칭 이후, 비매너적인 이용자를 구별하기 위해서 매칭 매너 후기를 받습니다.</p>
+        </div>
+    </section>
+
+    <section class="coummetAdBanner_container">
+        <div class="coummetAdBannerMsg_container">
+            <p class="adBannerTitleMsg">연인 찾기에 진심인 분들은 가입하세요</p>
+            <p class="adBannerSubMsg">커밋은 본인의 연인을 찾기 위해서 까다로운 가입절차를 위해 기꺼이 본인의 시간과 노력을 쓰고,
+                연인과 매칭을 위해서 비용을 쓸 수 있는 진정성 있는 이용자만 받습니다.</p>
+        </div>
+        <img src="./img/4.png" alt="" class="adBannerImg">
+    </section>
+
+    <section class="coumeetAdBoxes_container">
+        <div class="adBox_conatiner">
+            <p class="adBox_titleMsg">매칭은 연락처 정보 공개까지</p>
+            <p class="adBox_subMsg">커밋은 매칭된 이용자가 만나는 것을 보장하지 않습니다.</p>
+            <img src="./img/5.png" alt="" class="adBoxImg_1">
+            <p class="adBox_subMsg">서로 비용을 지불하여 매칭된 이용자는 만나는 것을
+                원하겠지만, 커밋에서 이를 강요하지는 않습니다. </p>
+        </div>
+        <div class="adBox_conatiner">
+            <p class="adBox_titleMsg">비공개 정보</p>
+            <p class="adBox_subMsg">사진, 연락처, 연봉은 열람 신청 전까지 비공개입니다.</p>
+            <img src="./img/6.png" alt="" class="adBoxImg_2">
+            <p class="adBox_subMsg">추가 정보 열람 비용을 지불해야 확인할 수 있습니다. 
+                불특정 다수에게 중요 정보 노출을 막기 위함입니다. </p>
+        </div>
+        <div class="adBox_conatiner">
+            <p class="adBox_titleMsg">상대방의 34가지 정보 공개</p>
+            <p class="adBox_subMsg">상대방에 대한 최대한 많은 정보를 제공하고자 합니다.</p>
+            <img src="./img/7.png" alt="" class="adBoxImg_3">
+            <p class="adBox_subMsg">MBTI, 연애 스타일 등 나의 연인을 찾고 결정하기 위해서
+                필요한 최대한 많은 정보를 제공합니다. </p>
+        </div>
+    </section>
+
+    <section class="bottomBanner_container">
+        <div class="bottomBannerBox_container">
+            <div class="bottomBannerMsg_container">
+                <p class="bottomBannerMsg">커밋에서 회원 가입하고<br>
+                    나와 매칭할 연인을 찾아보세요
+                </p>
+                <i class="fa-solid fa-circle-chevron-right"></i>
+            </div>
+            <img src="./img/8.png" alt="" class="bottomBannerImg">
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+                // footer.html의 내용이 로드된 후에 footer_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "footer_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+</body>
+</html>

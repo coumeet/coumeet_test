@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="point_management_style.css">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <script src="point_management_script.js" defer></script>
+    <title>Point Management</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "../navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+    <section class="myProfile">
+        <section class="myProfile_container">
+            <div id="leftmenubar"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    fetch('leftmenubar.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('leftmenubar').innerHTML = data;
+                        // leftmenubar.html의 내용이 로드된 후에 leftmenubar_script.js를 실행
+                        let script = document.createElement("script");
+                        script.src = "leftmenubar_script.js";
+                        document.head.appendChild(script);
+                    });
+                });
+            </script>
+            <section class="rightContent_container">
+                <!-- 내용 채워 넣어야 함 -->
+                <section class="pointManagement_container">
+                    <section class="pointInfo_container">
+
+                        <!-- 포인트 관리 -->
+                        <div class="pointManager_container">
+                            <span class="pointManagerTitle">포인트 관리</span>
+                            <div class="pointManagerDetail_container">
+                                <div class="pointManagerDetailTitle_container">
+                                    <p class="pointManagerDetailTitle">사용 가능 포인트</p>
+                                    <p class="pointAmount">1,700P</p>
+                                </div>
+                                <div class="pointActionBtn_container">
+                                    <button class="pointActionBtn" id="pointRechargeBtn">충전하기</button>
+                                    <button class="pointActionBtn" id="pointRefundBtn">환불하기</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 포인트 사용 내역 -->
+                        <div class="pointUsageHistory_container">
+                            <p class="pointUsageHistoryTitle">포인트 사용 내역</p>
+                            <div class="pointUsages_container">
+                                <!-- <div class="pointUsageTotal_container">
+                                    <div class="pointUsage_container">
+                                        <div class="pointUsageTitle">충전</div>
+                                        <div class="pointUsageContent_container">
+                                            <div class="pointUsage">100P</div>
+                                            <div class="pointUsageDetail_container">
+                                                <span class="pointUsageNumber">번호 : EFA!@#%&KGG,</span>
+                                                <span class="pointUsageDate">일자 : 23.06.14 18:57,</span>
+                                                <span class="PointUsagePaymentAmount">10,000원</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <p class="pointUsageMoreCheckBtn" id="showMoreBtn">더보기</p>
+                        </div>
+                    </section>
+                    
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <div id="pointRechargePopupContainer" class="popup_container">
+        <div class="popup_content">
+            <i class="fa-regular fa-rectangle-xmark" id="pointRechargeXBtn"></i>
+            <p class="popupTitle">충전하기</p>
+            <p class="popupSubTitle" id="pointRechargePopupSubTitle">충전할 포인트 금액을 선택해주세요.</p>
+            <p class="popupSubSubTitle" id="pointRechargePopupSubSubTitle">(1P = 10원, 결제 수수료가 포함된 금액입니다)</p>
+            <div class="matchingPoint_container" id="pointRechargePoint_container">
+                <div class="userPoint_container">
+                    <span class="userPointTitle">현재 포인트</span>
+                    <span class="userPoint" id="pointRechargeUserPoint">3,000P</span>
+                </div>
+                <div class="usagePoint_container">
+                    <div class="usagePointTitle_container">
+                        <div class="pointRechargeUsagePointTitle_container">
+                            <span class="usagePointTitle">충전 포인트</span>
+                            <span class="usagePoint" id="pointRechargeUsagePoint">+ 0P</span>
+                        </div>
+                        <div class="toggle_container" id="pointRechargeToggle_container">
+                            <!-- <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">450P</span>
+                                <span class="rechargePointAmount">(약 4,500원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">900P</span>
+                                <span class="rechargePointAmount">(약 9,000원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">1,900P</span>
+                                <span class="rechargePointAmount">(약 19,000원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">2,900P</span>
+                                <span class="rechargePointAmount">(약 29,000원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">3,900P</span>
+                                <span class="rechargePointAmount">(약 39,000원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">4,900P</span>
+                                <span class="rechargePointAmount">(약 49,000원)</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="totalPoint_container">
+                    <span class="totalPointTitle">총 포인트</span>
+                    <span class="totalPoint" id="pointRechargeTotalPoint">3,000P</span>
+                </div>
+            </div>
+            <button class="confrimBtn" id="pointRechargeConfirmBtn">완료</button>
+            <p class="errorMsg" id="pointRechargeErrorMsg">포인트가 부족합니다</p>
+        </div>
+    </div>
+
+    <div id="pointRefundPopupContainer" class="popup_container">
+        <div class="popup_content">
+            <i class="fa-regular fa-rectangle-xmark" id="pointRefundXBtn"></i>
+            <p class="popupTitle">환불하기</p>
+            <p class="popupSubTitle" id="pointRefundPopupSubTitle">환불은 신청일 기준으로 약 2주가 소요됩니다.</p>
+            <p class="popupSubSubTitle" id="pointRefundPopupSubSubTitle">(계좌번호를 잘못 입력하면 일정이 지연될 수 있습니다)</p>
+            <div class="matchingPoint_container" id="pointRefundPoint_container">
+                <div class="userPoint_container">
+                    <span class="userPointTitle">현재 포인트</span>
+                    <span class="userPoint" id="pointRefundUserPoint">3,000P</span>
+                </div>
+                <div class="eventPoint_container">
+                    <span class="eventPointTitle">이벤트 포인트</span>
+                    <span class="eventPoint" id="eventPoint">- 3,000P</span>
+                </div>
+                <div class="refundPoint_container">
+                    <span class="refundPointTitle">환급 포인트</span>
+                    <span class="refundPoint" id="refundPoint">3,000P</span>
+                </div>
+                <div class="bankAccount_container">
+                    <div class="bankInput_container" id="bankInput_container">
+                        <span class="bankInputTitle">은행명</span>
+                        <input type="text" class="bankInput">
+                    </div>
+                    <div class="bankInput_container" id="accoutNumberInput_container">
+                        <span class="accoutNumberTitle">계좌번호</span>
+                        <input type="number" inputmode="none" class="accountNumber">
+                    </div>
+                </div>
+            </div>
+            <p class="errorMsg" id="pointRefundErrorMsg">포인트가 부족합니다</p>
+            <button class="confrimBtn" id="pointRefundConfirmBtn">완료</button>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+</body>
+</html>

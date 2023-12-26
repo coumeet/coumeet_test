@@ -1,0 +1,196 @@
+:root {
+    --button-color : #DAEBFF;
+    --button-hover-color : #99C8FF;
+    --button-hover-outline-color : #81BBFF;
+    --subBtn-color : #767373;
+    --point-color : #DB7C8D;
+    --frequency-color : #D9D9D9;
+    --selectBtn-color : #F9F2F2;
+
+    --width-size : 400px;
+    --input-height-size : 45px;
+
+    --font-bigSize : 25px;
+    --font-middleSize : 20px;
+    --font-normalSize : 18px;
+    --font-size : 16px;
+    --font-smallSize : 14px;
+    --font-tooSmallSize : 12px;
+    --font-theSmallestSize : 10px;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+    font-family: Inter;
+    /* height: 100vh; */
+}
+
+.findInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.findInfo_container {
+    /* height: 100%; */
+    width: 30%;
+    min-width: 400px;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.findInfoTitle {
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+}
+
+.findInfoCategoryBtns_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+.findInfoCategoryBtns_container button {
+    margin: 0;
+    width: 100%;
+    height: 50px;
+    font-size: var(--font-size);
+    border: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    border-bottom: 1px solid var(--frequency-color);
+}
+
+.findInfoCategoryBtns_container button:hover {
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+.findInfoCategoryBtns_container button.selected {
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+
+.explainMsg {
+    font-size: var(--font-smallSize);
+    color: var(--subBtn-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.findIdInput_container {
+    width: 100%;
+}
+
+.inputfield_container {
+    width: 100%;
+}
+
+.input_container {
+    width: 97%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border: 2px solid var(--frequency-color);
+    border-radius: 5px;
+    margin: 0;
+    margin-bottom: 10px;
+
+    padding: 0;
+    padding-left : 10px;
+
+}
+
+.input_container:hover {
+    border: 2px solid var(--subBtn-color);
+}
+
+.input_container.selected {
+    border: 2px solid var(--point-color);
+}
+
+.inputfield {
+    height: calc(var(--input-height-size) - 4px);
+    margin: 0;
+    padding: 0;
+
+    width : 100%;
+    border: transparent;
+}
+
+.inputfield:focus {
+    outline: none;
+}
+
+.inputfield.disabled {
+    color: var(--frequency-color);
+    background-color: transparent;
+}
+
+.title {
+    width: 130px;
+    font-size: var(--font-smallSize);
+    font-weight: bold;
+}
+
+.confirmBtn {
+    background-color: var(--button-color);
+    border: transparent;
+    border-radius: 5px;
+
+    width : 100%;
+    height: var(--input-height-size);
+
+    font-weight: bold;
+    font-size: var(--font-smallSize);
+    cursor: pointer;
+    padding: 0;
+}
+
+.confirmBtn:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.01);
+}
+
+.findPwInput_container {
+    display: none;
+}
+
+.errorMsg {
+    margin: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+#authNumberInput_container,
+#changePwInput_container,
+#changePw2Input_container,
+#authNumberBtn,
+#pwChangeBtn {
+    display: none;
+}
+
+/* 테블릿 */
+@media screen and (max-width: 1023px) {
+
+
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+
+    .findInfo_container {
+        min-width: 350px;
+    }
+
+}

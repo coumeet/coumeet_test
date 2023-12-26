@@ -1,0 +1,73 @@
+:root {
+    --button-color : #DAEBFF;
+    --button-hover-color : #99C8FF;
+    --button-hover-outline-color : #81BBFF;
+    --subBtn-color : #767373;
+    --point-color : #DB7C8D;
+    --frequency-color : #D9D9D9;
+    --selectBtn-color : #F9F2F2;
+
+    --width-size : 400px;
+    --input-height-size : 45px;
+
+    --font-bigSize : 25px;
+    --font-middleSize : 20px;
+    --font-normalSize : 18px;
+    --font-size : 16px;
+    --font-smallSize : 14px;
+    --font-tooSmallSize : 12px;
+    --font-theSmallestSize : 10px;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+    font-family: Inter;
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    margin-top: 100px;
+    background-color: var(--selectBtn-color);
+}
+
+.footer_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.aLink_container a {
+    margin: 10px;
+    text-decoration: none;
+    font-size: var(--font-smallSize);
+    color: black;
+}
+
+.aLink_container a:hover {
+    font-weight: bold;
+}
+
+.text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 15px;
+}
+
+.text_container span {
+    font-size: var(--font-smallSize);
+    color: var(--subBtn-color);
+}
+
+.rightText {
+    font-size: var(--font-tooSmallSize) !important;
+    color: var(--point-color) !important;;
+    margin-top: 5px;
+}

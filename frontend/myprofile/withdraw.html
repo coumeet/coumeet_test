@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="withdraw_style.css">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <script src="withdraw_script.js" defer></script>
+    <title>Withdraw</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "../navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+    <section class="myProfile">
+        <section class="myProfile_container">
+            <div id="leftmenubar"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    fetch('leftmenubar.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('leftmenubar').innerHTML = data;
+                        // leftmenubar.html의 내용이 로드된 후에 leftmenubar_script.js를 실행
+                        let script = document.createElement("script");
+                        script.src = "leftmenubar_script.js";
+                        document.head.appendChild(script);
+                    });
+                });
+            </script>
+            <section class="rightContent_container">
+                <section class="withdrawContent_cotainer">
+                    <p class="withdrawTitle">회원 탈퇴</p>
+                    <div class="withdrawMsg_container">
+                        <p class="withdrawMsgTitle">아래 부분을 꼭 읽고 회원탈퇴를 고려해주세요</p>
+                        <p class="withdrawMsg">회원탈퇴가 진행되는 즉시 아래 프로세스가 진행되며, 이후에 진행을 되돌릴 수 없습니다.
+                            <br><br><b>1. 모든 이용 데이터는 모두 삭제되며 복구되지 않습니다.</b>
+                            <br>- 회원 정보
+                            <br>- 자료 정보(사진, 재직증명서 등)
+                            <br>- 후기 기록
+                            <br>- 신고 기록
+                            <br>- 매칭 기록
+                            <br>- 찜하기 기록
+                            <br>- 포인트 사용 기록
+                            <br>- 포인트 환급 기록
+                            <br>- 그 외 모든 활동 기록
+                            <br><br><b>2. 포인트는 모두 소멸되고 환불되지 않습니다.</b>
+                            <br><br><br>'COUMMET'은 위 프로세스 진행에 대한 책임을 지지 않으며,
+                            <br>회원탈퇴를 진행하는 것은 위 내용을 모두 동의한 것으로 간주됩니다. 
+                        </p>
+                    </div>
+                    <button class="confirmBtn">회원탈퇴 진행</button>
+                </section>
+            </section>
+        </section>
+    </section>
+</body>
+</html>

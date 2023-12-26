@@ -1,0 +1,88 @@
+:root {
+    --button-color : #DAEBFF;
+    --button-hover-color : #99C8FF;
+    --subBtn-color : #767373;
+    --point-color : #DB7C8D;
+    --frequency-color : #D9D9D9;
+    --selectBtn-color : #F9F2F2;
+
+    --width-size : 400px;
+    --input-height-size : 45px;
+
+    --font-bigSize : 25px;
+    --font-middleSize : 20px;
+    --font-size : 16px;
+    --font-smallSize : 14px;
+    --font-tooSmallSize : 12px;
+}
+
+.myProfile {
+    width: 100%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.myProfile_container {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+    
+}
+
+.rightContent_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.reviewTitle {
+    font-weight: bold;
+}
+
+.reviewSubtitle {
+    font-size: var(--font-smallSize);
+    color: var(--point-color);
+}
+
+.mannersInfo_container {
+    border: 1px solid var(--frequency-color);
+    border-radius: 10px;
+    width: 80%;
+    min-width: 300px;
+    padding: 20px;
+    padding-top : 40px;
+}
+
+.mannersInfo_container span {
+    font-weight: bold;
+}
+
+.mannerDetail_container {
+    margin-bottom: 20px;
+}
+
+/* 테블릿 */
+@media screen and (max-width: 1023px) {
+    .myProfile_container {
+        width: 90%;
+    }
+}
+  
+/* 모바일 */
+@media screen and (max-width: 767px) {
+    .mannersInfo_container {
+        width: 87%;
+    }
+
+    .myProfile {
+        margin-top: 80px;
+    }
+}

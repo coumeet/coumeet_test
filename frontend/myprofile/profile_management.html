@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile_management_style.css">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <script type="module" src="profile_management_script.js" defer></script>
+    <title>My Profile</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "../navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+    <section class="myProfile">
+        <section class="myProfile_container">
+            <div id="leftmenubar"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    fetch('leftmenubar.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('leftmenubar').innerHTML = data;
+                        // leftmenubar.html의 내용이 로드된 후에 leftmenubar_script.js를 실행
+                        let script = document.createElement("script");
+                        script.src = "leftmenubar_script.js";
+                        document.head.appendChild(script);
+                    });
+                });
+            </script>
+            <section class="rightContent_container">
+              <section class="profileManagement_container">
+                <section class="profileInfo_container">
+
+                  <!-- 회원가입 진행 상태 -->
+                  <div class="signUpStatus_container">
+                    <span class="signUpConfirmStatus">회원가입 승인 대기중</span>
+                    <span class="signUpDate">(회원가입일 : 2023-10-19)</span>
+                  </div>
+                  <!-- 회원가입 거절 사유 -->
+                  <div class="signupRefuse_container">
+                    <span class="signupRefuseTitle">거절 사유</span>
+                    <span class="signupRefuseDate">(거절일 : 2023-11-07)</span>
+                    <p class="signupRefuseMsg">메시지입니다. 메시지입니다. 메시지입니다.</p>
+                  </div>
+                  <!-- 아이디 입력 -->
+                  <div id="id_container" class="container">
+                    <div id="idInput_container" class="input_container">
+                      <div class="titleWithBtn" id="idBtnTitle">아이디</div>
+                      <input type="text" class="inputfield" id="id" placeholder="이메일 주소로 입력하세요">
+                    </div>
+                  </div>  
+  
+                  <!-- 이름 입력 -->
+                  <div id="name_conatiner" class="container">
+                    <div id="nameInput_container" class="input_container">
+                      <div class="title">이름</div>
+                      <input type="text" class="inputfield" id="nameInput" placeholder="입력해주세요">
+                    </div>
+                  </div>
+                  <p id="nameErrorMsg" class="errorMsg">이름을 입력해주세요.</p>
+  
+                  <!-- 성별 입력 -->
+                  <div id="gender_container">
+                    <div id="genderInput_container" class="btns_container">
+                      <div class="btns_title">성별</div>
+                      <div class="genderBtns_container">
+                        <button id="genderBtn" class="btns_btn">남자</button>
+                        <button id="genderBtn" class="btns_btn">여자</button>
+                      </div>
+                    </div>
+                  </div>
+                  <p id="genderErrorMsg" class="btns_errorMsg">성별을 선택해주세요</p>
+  
+                  <!-- 닉네임 입력 -->
+                  <div id="nickName_container" class="container">
+                    <div id="nickNameInput_container" class="input_container">
+                      <div class="titleWithBtn">닉네임</div>
+                      <input type="text" class="inputfield" id="nickNameInput" placeholder="입력해주세요">
+                      <span id="nickNameNOC" class="NOC">0/10</span>
+                    </div>
+                    <button id="nickNameCheckBtn" class="checkBtn">중복확인</button>
+                  </div>  
+                  <p id="nickNameErrorMsg" class="errorMsg">닉네임이 중복됩니다.</p>
+  
+                  <!-- 나이 입력 -->
+                  <div id="age_conatiner" class="container">
+                    <div id="ageInput_container" class="input_container">
+                      <div class="title">나이</div>
+                      <input type="text" class="inputfield" id="ageInput" placeholder="숫자로 입력해주세요(예시 : 34)">
+                    </div>
+                  </div>
+                  <p id="ageErrorMsg" class="errorMsg">나이를 입력해주세요.</p>
+  
+                  <!-- 키 입력 -->
+                  <div id="height_conatiner" class="container">
+                    <div id="heightInput_container" class="input_container">
+                      <div class="title">키</div>
+                      <input type="text" class="inputfield" id="heightInput" placeholder="숫자로 입력해주세요(예시 : 177)">
+                    </div>
+                  </div>
+                  <p id="heightErrorMsg" class="errorMsg">키를 입력해주세요.</p>
+  
+                  <!-- 사는 곳 -->
+                  <div id="region_container">
+                    <div id="regionInput_container" class="input_container">
+                      <div class="title" id="regionTitle">사는곳</div>
+                      <div class="regionContent_container">
+                        <div class="city_container">
+                        </div>
+                        <div class="gu_container">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <p id="regionErrorMsg" class="btns_errorMsg">지역을 선택해주세요</p>
+  
+                  <!-- 직업 선택 -->
+                  <div id="occupation_container" class="container">
+                    <div id="occupationInput_container" class="input_container">
+                      <div class="title" id="occupationTitle">직업</div>
+                    </div>
+                    <div id="occupationDetail_container" class="container">
+                      <div id="occupationDetailInput_container" class="input_container">
+                        <div class="title">상세업무</div>
+                        <input type="text" class="inputfield" id="occupationDetailInput" placeholder="입력해주세요">
+                        <span id="occupationDetailNOC" class="NOC">0/10</span>
+                      </div>
+                    </div>
+                    <div class="occupationFile_container">
+                      <div id="occupationFileMsg_container" class="fileMsg_container" style="display: block;"">
+                        <div class="occupationfileName_container">
+                          <span class="occupationfileName"></span>
+                          <i class="fa-solid fa-xmark" style="color: #000000;"></i>
+                        </div>
+                      </div>
+                      <input type="file" id="occupationFileInput" style="display:none;">
+                      <button id="occupationCheckBtn" class="checkBtn">재직증명서 업로드</button>
+                    </div>
+                  </div>
+          
+                  <p id="occupationErrorMsg" class="errorMsg">직업을 선택해주세요</p>
+                  <p id="occupationdescriptionMsg" class="descriptionMsg"><b>* 재직증명서(필수, 파일 용량 : 1MB 이내)</b><br>- 일반 : 3개월 이내 재직증명서 기준.<br>- 사업자, 프리랜서 : 사업자등록증 or 기타 증빙 자료. </p>
+                  
+                  <!-- MBTI 선택 -->
+                  <div id="mbti_container" class="container">
+                    <div id="mbtiInput_container" class="input_container">
+                      <div class="title">MBTI</div>
+                    </div>
+                  </div>
+                  <p id="mbtiErrorMsg" class="errorMsg">MBTI를 선택해주세요</p>
+  
+                  <!-- 스타일 -->
+                  <div id="style_container" class="container">
+                    <div id="styleInput_container" class="input_container">
+                      <div class="title_container" id="styleTitle_container">
+                        <div class="title">스타일</div>
+                        <span id="style_duSelectionMsg" class="duSelectionMsg">중복 선택 가능<br>(최대 3개)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p id="styleErrorMsg" class="errorMsg">스타일을 선택해주세요</p>
+                  
+                  <!-- 쌍커풀 -->
+                  <div id="eyesType_container" class="container">
+                    <div id="eyesTypeInput_container" class="input_container">
+                      <div class="title">쌍커풀</div>
+                    </div>
+                  </div>
+                  <p id="eyesTypeErrorMsg" class="errorMsg">쌍커풀을 선택해주세요</p>
+  
+                  <!-- 체형 -->
+                  <div id="body_type_container" class="container">
+                    <div id="body_typeInput_container" class="input_container">
+                      <div class="title">체형</div>
+                    </div>
+                  </div>
+                  <p id="body_typeErrorMsg" class="errorMsg">체형을 선택해주세요</p>
+  
+                <!-- 얼굴상 -->
+                <div id="face_type_container" class="container">
+                  <div id="face_typeInput_container" class="input_container">
+                    <div class="title">얼굴상</div>
+                  </div>
+                </div>
+                <p id="face_typeErrorMsg" class="errorMsg">얼굴상을 선택해주세요</p>
+                
+                <!-- 입술 -->
+                <div id="lips_type_container" class="container">
+                  <div id="lips_typeInput_container" class="input_container">
+                    <div class="title">입술</div>
+                  </div>
+                </div>
+                <p id="lips_typeErrorMsg" class="errorMsg">입술을 선택해주세요</p>
+                
+                <!-- 성격 -->
+                <div id="personality_container" class="container"> 
+                  <div id="personalityInput_container" class="input_container">
+                    <div class="title_container" id="personalityTitle_container">
+                      <div class="title">성격</div>
+                      <span id="personality_duSelectionMsg" class="duSelectionMsg">중복 선택 가능<br>(최대 3개)</span>
+                    </div>
+                  </div>
+                </div>
+                <p id="personalityErrorMsg" class="btns_errorMsg">성격을 선택해주세요</p>
+                
+                <!-- 음주 -->
+                <div id="drinking_habits_container" class="container">
+                  <div id="drinking_habitsInput_container" class="input_container">
+                    <div class="title">음주</div>
+                  </div>
+                </div>
+                <p id="drinking_habitsErrorMsg" class="errorMsg">음주를 선택해주세요</p>
+
+                <!-- 흡연 -->
+                <div id="smoking_habits_container" class="container">
+                  <div id="smoking_habitsInput_container" class="input_container">
+                    <div class="title">흡연</div>
+                  </div>
+                </div>
+                <p id="smoking_habitsErrorMsg" class="errorMsg">흡연을 선택해주세요</p>
+
+                <div id="religion_container" class="container">
+                  <div id="religionInput_container" class="input_container">
+                    <div class="title">종교</div>
+                  </div>
+                </div>
+                <p id="religionErrorMsg" class="errorMsg">종교를 선택해주세요</p>
+
+                <!-- 나이 선호 -->
+                <div id="agePreference_container" class="container">
+                  <div id="agePreferenceInput_container" class="input_container">
+                    <div class="title">나이 선호</div>
+                  </div>
+                </div>
+                <p id="agePreferenceErrorMsg" class="errorMsg">나이 선호를 선택해주세요</p>
+
+                <!-- 친구관계 -->
+                <div id="relationship_container" class="container">
+                  <div id="relationshipInput_container" class="input_container">
+                    <div class="title">친구관계</div>
+                  </div>
+                </div>
+                <p id="relationshipErrorMsg" class="errorMsg">친구관계를 선택해주세요</p>
+
+                <!-- 장거리 -->
+                <div id="distance_container" class="container">
+                  <div id="distanceInput_container" class="input_container">
+                    <div class="title">장거리</div>
+                  </div>
+                </div>
+                <p id="distanceErrorMsg" class="errorMsg">장거리를 선택해주세요</p>
+
+                <!-- 애완동물 -->
+                <div id="pet_container" class="container">
+                  <div id="petInput_container" class="input_container">
+                    <div class="title">애완동물</div>
+                  </div>
+                </div>
+                <p id="petErrorMsg" class="errorMsg">애완동물을 선택해주세요</p>
+
+                <!-- 취미 -->
+                <div id="hobby_container" class="container"> 
+                  <div id="hobbyInput_container" class="input_container">
+                    <div class="title_container" id="hobbyTitle_container">
+                      <div class="title">취미</div>
+                      <span id="hobby_duSelectionMsg" class="duSelectionMsg">중복 선택 가능<br>(최대 6개)</span>
+                    </div>
+                    <div class="hobbyBtn_container">
+                      <!-- <button id="hobbyBtn" class="btns_btn">여행</button> -->
+                    </div>
+                  </div>
+                </div>
+                <p id="hobbyErrorMsg" class="btns_errorMsg">취미를 선택해주세요</p>
+  
+                <!-- 열람정보 -->
+                <div class="readingInfoMsg_container">
+                  <p class="readingInfoMsgTitle">열람정보</p>
+                  <p class="readingInfoMsgSub"><b>기본적으로 공개되지 않습니다. 상대방이 열람 결제를 하면 공개됩니다.</b><br>미래 연인에게 좋은 이미지로 보여지도록 아래 규격은 꼭 지켜주세요 :) <br> 권장 규격 : 400 x 400(px), 최대 용량 : 1MB</p>
+                </div>
+                <div class="picture_container">
+                  <div class="title">사진</div>
+                  <div class="picturesBtn_container">
+                    <button id="pictureBtn_1" class="pictureBtn">
+                      <i class="fa-regular fa-rectangle-xmark" style="color: #ffffff;"></i>
+                      <i class="fa-solid fa-plus" id="pictureBtn_1_i" style="color: #d9d9d9;"></i>
+                      <img src="" alt="" id="picture_1_img" class="picture_img">
+                    </button>
+                    <input type="file" id="picture_1_input" class="pictureInput"></input>    
+                  </div>
+                  <div class="picturesBtn_container">
+                    <button id="pictureBtn_2" class="pictureBtn">
+                      <i class="fa-regular fa-rectangle-xmark" style="color: #ffffff;"></i>
+                      <i class="fa-solid fa-plus" id="pictureBtn_2_i" style="color: #d9d9d9;"></i>
+                      <img src="" alt="" id="picture_2_img" class="picture_img">
+                    </button>
+                    <input type="file" id="picture_2_input" class="pictureInput"></input>    
+                  </div>
+                  <div class="picturesBtn_container">
+                    <button id="pictureBtn_3" class="pictureBtn">
+                      <i class="fa-regular fa-rectangle-xmark" style="color: #ffffff;"></i>
+                      <i class="fa-solid fa-plus" id="pictureBtn_3_i" style="color: #d9d9d9;"></i>
+                      <img src="" alt="" id="picture_3_img" class="picture_img">
+                    </button>
+                    <input type="file" id="picture_3_input" class="pictureInput"></input>    
+                  </div>
+                </div>
+                <p id="pictureErrorMsg" class="btns_errorMsg">사진을 업로드해주세요</p>
+  
+                <!-- 연봉 입력 -->
+                <div id="Salary_container" class="container">
+                  <div id="SalaryInput_container" class="input_container">
+                    <div class="title">연봉</div>
+                    <input type="text" class="inputfield" id="SalaryInput" placeholder="연봉을 입력해주세요">
+                  </div>
+                </div>  
+                <p id="SalaryErrorMsg" class="errorMsg">연봉을 입력해주세요</p>
+  
+                <!-- 연락처 입력 -->
+                <div id="phone_container" class="container">
+                  <div id="phoneInput_container" class="input_container">
+                    <div class="title">연락처</div>
+                    <input type="text" class="inputfield" id="phone" placeholder="예시)01011112222">
+                  </div>
+                  <button id="certificationSendBtn" class="checkBtn">인증번호</button>
+                </div>
+                <div id="phoneCertification_container" class="container">
+                  <div id="phoneCertificationInput_container" class="input_container">
+                    <div class="title">인증번호</div>
+                    <input type="text" id="phoneCertificationNumber" name="phoneCertificationNumber" placeholder="인증번호를 입력해주세요" class="inputfield" pattern="[0-9]{6}" required>
+                  </div>
+                    <button id="phoneCertificationSubmitBtn" class="checkBtn">완료</button>
+                </div>
+                <p id="phoneErrorMsg" class="errorMsg">인증이 완료되었습니다.</p>
+              </div>           
+                </section>
+  
+                <section class="datingStyle_container">
+                  <div class="datingStyleContent_container">
+                    <p class="datingStyle_title">나의 연애 스타일은?</p>
+                    <p id="datingsStyleErrorMsg" class="dating_errorMsg">나의 연애 스타일을 모두 선택해주세요</p>
+                    <div class="datingStyleBtns_container">
+                      <div class="datingStyle_btns_container">
+              
+                        <!-- 연락텀 -->
+                        <div class="contactTerms_container">
+                          <p id="contactTermsTitle" class="dating_title">연락텀</p>
+                          <div class="contactTermsBtns_container">
+                          </div>
+                        </div>
+              
+                        <!-- 상황보고 -->
+                        <div class="statusReport_container">
+                          <p id="statusReportTitle" class="dating_title">상황보고</p>
+                          <div class="statusReportBtns_container">
+                          </div>
+                        </div>
+              
+                        <!-- 데이트 비용 -->
+                        <div class="datingCost_container">
+                          <p id="datingCostTitle" class="dating_title">데이트비용</p>
+                          <div class="datingCostBtns_container">
+                          </div>
+                        </div>
+              
+                        <!-- 취미 -->
+                        <div class="hobbyPreference_container">
+                          <p id="hobbyPreferenceTitle" class="dating_title">취미</p>
+                          <div class="hobbyPreferenceBtns_container">
+                          </div>
+                        </div>
+              
+                        <!-- 연애스타일 -->
+                        <div class="datingStyles_container">
+                          <p id="datingStylesTitle" class="dating_title">연애 스타일</p>
+                          <div class="datingStylesBtns_container">
+                          </div>
+                        </div>
+              
+                        <!-- 매너 -->
+                        <div class="manner_container">
+                          <p id="mannerTitle" class="dating_title">매너</p>
+                          <div class="mannerBtns_container">
+                          </div>
+                        </div>
+              
+                        <!-- 데이트 텀 -->
+                        <div class="datingTerm_container">
+                          <p id="datingTermTitle" class="dating_title">데이트 텀</p>
+                          <div class="datingTermBtns_container">
+                          </div>
+                        </div>
+              
+                        <!-- 기념일 -->
+                        <div class="anniversary_container">
+                          <p if="anniversaryTitle" class="dating_title">기념일</p>
+                          <div class="anniversaryBtns_container">
+                          </div>
+                        </div>
+              
+                        <!-- 선호하는 연락 -->
+                        <div class="contactPreference_container">
+                          <p id="contactPreferenceTitle" class="dating_title">선호하는 연락</p>
+                          <div class="contactPreferenceBtns_container">
+                          </div>
+                        </div>
+              
+                        <!-- 위로스타일 -->
+                        <div class="comfortStyle_container">
+                          <p id="comfortStyleTitle" class="dating_title">위로스타일</p>
+                          <div class="comfortStyleBtns_container">
+                          </div>
+                        </div>
+                      </div>
+                      <img src="../img/9.png" alt="" class="datingStyleImg">
+                    </div>
+                  </div>
+                </section>   
+  
+                <section class="letter_container">
+                  <div class="letterContent_container">
+                    <p class="letterTitle">나의 연인에게</p>
+                    <p id="letterdescriptionMsg" class="descriptionMsg">나의 프로필을 보는 <b>매칭 상대자에게 보여지는 메시지</b>입니다.<br>나를 잘 알리고, 어필할 수 있는 메시지, 혹은 요청하는 내용을 자세히 적어주세요(최소 3줄 이상 권장)</p>
+                    <div id="letterInput_container" class="input_container">
+                      <textarea name="" id="letterInput" cols="30" rows="10"></textarea>
+                      <span id="letterNOC" class="NOC">0/200</span>
+                    </div>
+                    <p id="letterErrorMsg" class="errorMsg">필수 입력 사항입니다.</p>
+                  </div>
+                </section>
+  
+                <section class="confirmBtns_container">
+                  <div class="confirmBtn_container">
+                    <button class="checkBtn" id="signUpConfirmBtn">프로필 저장</button>
+                  </div>
+                </section>
+              </section>
+            </section>
+        </section>
+    </section>
+</body>
+</html>

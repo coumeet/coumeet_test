@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="persondetail_style.css">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <script src="persondetail_script.js" defer></script>
+    <title>PersonDetail</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });    
+    </script>
+    <section class="personDetail">
+        <div class="personDetail_container">
+
+            <section class="introduceMe_container">
+                <p class="introduceMeTitle">나를 소개 합니다 :)</p>
+                <div class="favoriteCount_container">
+                  <i class="fa-regular fa-heart" style="color: #db7c8d;"></i>
+                  <span class="favoriteCount">0</span>
+                </div>
+                <section class="letter_container">
+                    <p class="letterTitle">나의 연인에게</p>
+                    <p class="lettertMsg"></p>
+                </section>
+                <div class="introduceMeInfo_container">
+                    <img src="" alt="" class="introduceMeInfoImg">
+                    <div class="introduceMeInfoDetailContent_container">
+                        <div class="introduceMeInfoDetail_container" id="introduceMeInfoDetail_1">
+                            <div class="nickname_container">
+                                <span class="introduceMeInfo_title" id="nicknameTitle">닉네임?</span>
+                                <span class="introduceMeInfo_content" id="nicknameContent"></span>
+                            </div>
+                            <div class="gender_container">
+                                <span class="introduceMeInfo_title" id="genderTitle">성별?</span>
+                                <span class="introduceMeInfo_content" id="genderContent"></span>
+                            </div>
+                            <div class="age_container">
+                                <span class="introduceMeInfo_title" id="ageTitle">나이?</span>
+                                <span class="introduceMeInfo_content" id="ageContent"></span>
+                            </div>
+                            <!-- <div class="occupation_container">
+                                <span class="introduceMeInfo_title" id="occupationTitle">직업?</span>
+                                <span class="introduceMeInfo_content" id="occupationContent"></span>
+                            </div> -->
+                            <div class="occupationDetail_container">
+                                <span class="introduceMeInfo_title" id="occupationDetailTitle">상세업무?</span>
+                                <span class="introduceMeInfo_content" id="occupationDetailContent"></span>
+                            </div>
+                            <div class="region_container">
+                                <span class="introduceMeInfo_title" id="regionTitle">사는곳?</span>
+                                <span class="introduceMeInfo_content" id="regionContent"> </span>
+                            </div>
+                            <div class="height_container">
+                                <span class="introduceMeInfo_title" id="heightTitle">키?</span>
+                                <span class="introduceMeInfo_content" id="heightContent"></span>
+                            </div>
+                            <div class="MBTI_container">
+                                <span class="introduceMeInfo_title" id="MBTITitle">MBTI?</span>
+                                <span class="introduceMeInfo_content" id="MBTIContent"></span>
+                            </div>
+                            <div class="style_container">
+                                <span class="introduceMeInfo_title" id="styleTitle">스타일?</span>
+                                <span class="introduceMeInfo_content" id="styleContent"></span>
+                            </div>
+                            <div class="eyetype_container">
+                                <span class="introduceMeInfo_title" id="eyetypeTitle">쌍커풀?</span>
+                                <span class="introduceMeInfo_content" id="eyetypeContent"></span>
+                            </div>
+                            <div class="bodyType_container">
+                                <span class="introduceMeInfo_title" id="bodyTypeTitle">체형?</span>
+                                <span class="introduceMeInfo_content" id="bodyTypeContent"></span>
+                            </div>
+                            <div class="faceType_container">
+                                <span class="introduceMeInfo_title" id="faceTypeTitle">얼굴상?</span>
+                                <span class="introduceMeInfo_content" id="faceTypeContent"></span>
+                            </div>
+                            <div class="lips_container">
+                                <span class="introduceMeInfo_title" id="lipsTitle">입술?</span>
+                                <span class="introduceMeInfo_content" id="lipsContent"></span>
+                            </div>
+                            <div class="personality_container">
+                                <span class="introduceMeInfo_title" id="personalityTitle">성격?</span>
+                                <div class="introduceMeInfo_boxContent_container">
+                                    <!-- <div class="introduceMeInfo_boxContent" id="personalityContent">다정한</div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="introduceMeInfoDetail_container" id="introduceMeInfoDetail_2">
+    
+                            <div class="drinking_container">
+                                <span class="introduceMeInfo_title" id="drinkingTitle">음주?</span>
+                                <span class="introduceMeInfo_content" id="drinkingContent"></span>
+                            </div>
+                            <div class="smoking_container">
+                                <span class="introduceMeInfo_title" id="smokingTitle">흡연?</span>
+                                <span class="introduceMeInfo_content" id="smokingContent"></span>
+                            </div>
+                            <div class="religion_container">
+                                <span class="introduceMeInfo_title" id="religionTitle">종교?</span>
+                                <span class="introduceMeInfo_content" id="religionContent"></span>
+                            </div>
+                            <div class="agePreference_container">
+                                <span class="introduceMeInfo_title" id="agePreferenceTitle">나이 선호?</span>
+                                <span class="introduceMeInfo_content" id="agePreferenceContent"></span>
+                            </div>
+                            <div class="relationship_container">
+                                <span class="introduceMeInfo_title" id="relationshipTitle">친구관계?</span>
+                                <span class="introduceMeInfo_content" id="relationshipContent"></span>
+                            </div>
+                            <div class="distance_container">
+                                <span class="introduceMeInfo_title" id="distanceTitle">장거리?</span>
+                                <span class="introduceMeInfo_content" id="distanceContent"></span>
+                            </div>
+                            <div class="pet_container">
+                                <span class="introduceMeInfo_title" id="petTitle">애완동물?</span>
+                                <span class="introduceMeInfo_content" id="petContent"></span>
+                            </div>
+                            <div class="hobby_container">
+                                <span class="introduceMeInfo_title" id="hobbyTitle">취미?</span>
+                                <div class="introduceMeInfo_boxContent_container">
+                                    <!-- <div class="introduceMeInfo_boxContent" id="hobbyContent">골프</div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="datingStyle_container">
+                <div class="datingStyleContent_container">
+                  <p class="datingStyle_title">나의 연애 스타일은?</p>
+                  <p class="datingStyleSubtitle">이분의 절대적인 연애 스타일은 아닙니다. 참고만 해주세요.</p>
+                  <div class="datingStyleBtns_container">
+                    <div class="datingStyle_btns_container">
+            
+                      <!-- 연락텀 -->
+                      <div class="contactTerms_container">
+                        <p id="contactTermsTitle" class="dating_title">연락텀</p>
+                        <div class="contactTermsBtns_container">
+                        </div>
+                      </div>
+            
+                      <!-- 상황보고 -->
+                      <div class="statusReport_container">
+                        <p id="statusReportTitle" class="dating_title">상황보고</p>
+                        <div class="statusReportBtns_container">
+                        </div>
+                      </div>
+            
+                      <!-- 데이트 비용 -->
+                      <div class="datingCost_container">
+                        <p id="datingCostTitle" class="dating_title">데이트비용</p>
+                        <div class="datingCostBtns_container">
+                        </div>
+                      </div>
+            
+                      <!-- 취미 -->
+                      <div class="hobbyPreference_container">
+                        <p id="hobbyPreferenceTitle" class="dating_title">취미</p>
+                        <div class="hobbyPreferenceBtns_container">
+                        </div>
+                      </div>
+            
+                      <!-- 연애스타일 -->
+                      <div class="datingStyles_container">
+                        <p id="datingStylesTitle" class="dating_title">연애 스타일</p>
+                        <div class="datingStylesBtns_container">
+                        </div>
+                      </div>
+            
+                      <!-- 매너 -->
+                      <div class="manner_container">
+                        <p id="mannerTitle" class="dating_title">매너</p>
+                        <div class="mannerBtns_container">
+                        </div>
+                      </div>
+            
+                      <!-- 데이트 텀 -->
+                      <div class="datingTerm_container">
+                        <p id="datingTermTitle" class="dating_title">데이트 텀</p>
+                        <div class="datingTermBtns_container">
+                        </div>
+                      </div>
+            
+                      <!-- 기념일 -->
+                      <div class="anniversary_container">
+                        <p if="anniversaryTitle" class="dating_title">기념일</p>
+                        <div class="anniversaryBtns_container">
+                        </div>
+                      </div>
+            
+                      <!-- 선호하는 연락 -->
+                      <div class="contactPreference_container">
+                        <p id="contactPreferenceTitle" class="dating_title">선호하는 연락</p>
+                        <div class="contactPreferenceBtns_container">
+                        </div>
+                      </div>
+            
+                      <!-- 위로스타일 -->
+                      <div class="comfortStyle_container">
+                        <p id="comfortStyleTitle" class="dating_title">위로스타일</p>
+                        <div class="comfortStyleBtns_container">
+                        </div>
+                      </div>
+                    </div>
+                    <img src="./img/13.png" alt="" class="datingStyleImg">
+                  </div>
+                </div>
+            </section>
+
+            <section class="manners_container">
+                <p class="mannersTitle">이용 매너는?</p>
+                <p class="mannersSubtitle">이분과 매칭 경험이 있는 상대방이 답변한 후기입니다.</p>
+                <div class="mannersInfo_container">
+                    <!-- <div class="mannerDetail_container" id="appointmentManner_container">
+                        <span class="mannersInfoTitle" id="appointmentMannerTItle">1. 약속 시간을 잘 지켜요.</span>
+                        <i class="fa-solid fa-user-group" style="color: #000000;"></i>
+                        <span class="mannersInfoResult" id="appointmentMannerResult">(0)</span>
+                    </div>
+                    <div class="mannerDetail_container" id="contactManner_container">
+                        <span class="mannersInfoTitle" id="contactMannerTItle">2. 연락을 잘 받아요.</span>
+                        <i class="fa-solid fa-user-group" style="color: #000000;"></i>
+                        <span class="mannersInfoResult" id="contactMannerResult">(0)</span>
+                    </div>
+                    <div class="mannerDetail_container" id="replyManner_container">
+                        <span class="mannersInfoTitle" id="replyMannerTItle">3. 답변을 잘해요.</span>
+                        <i class="fa-solid fa-user-group" style="color: #000000;"></i>
+                        <span class="mannersInfoResult" id="replyMannerResult">(0)</span>
+                    </div>
+                    <div class="mannerDetail_container" id="basicManner_container">
+                        <span class="mannersInfoTitle" id="basicMannerTItle">4. 매너가 좋아요.</span>
+                        <i class="fa-solid fa-user-group" style="color: #000000;"></i>
+                        <span class="mannersInfoResult" id="basicMannerResult">(0)</span>
+                    </div> -->
+                </div>
+            </section>
+
+            <section class="additionalInfo_container">
+                <p class="additionalInfoTitle">추가 정보는?</p>
+                <p class="additionalInfoSubTitle">매칭을 판단하기 위한 추가 정보입니다</p>
+                <p class="additionalInfoSubTitle">(열람정보:사진,직업,연봉)</p>
+                <section class="picture_container">
+                    <!-- <img src="img/a.png" alt="" class="picture"> -->
+                </section>
+                <div class="additionalInfoDetail_container">
+                    <p class="phoneInfoContentMsg">(이름과 연락처 정보는 상대방과 매칭이 완료되면 알람으로 공유됩니다.)</p>
+                    <div class="additionalInfoDetail" id="nameInfo_container">
+                        <span class="additionalInfoContentTitle" id="nameInfoTitle">이름? </span>
+                        <span class="additionalInfoContentContent" id="nameInfoContent"></span>
+                    </div>
+                    <div class="additionalInfoDetail" id="phoneInfo_container">
+                        <span class="additionalInfoContentTitle" id="phoneInfoTitle">연락처? </span>
+                        <span class="additionalInfoContentContent" id="phoneInfoContent"></span>
+                    </div>
+                    <div class="additionalInfoDetail" id="occupation_container">
+                        <span class="additionalInfoContentTitle" id="occupationTitle">직업? </span>
+                        <span class="additionalInfoContentContent" id="occupationContent"></span>
+                    </div>
+                    <div class="additionalInfoDetail" id="salaryInfo_container">
+                        <span class="additionalInfoContentTitle" id="salaryInfoTitle">연봉? </span>
+                        <span class="additionalInfoContentContent" id="salaryInfoContent"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="confirmBtns_container">
+              <div class="confirmBtn_container">
+                <button class="confirmBtn" id="additionalInfomBtn">추가 정보 열람하기</button>
+                <button class="confirmBtn" id="matchingOfferBtn">매칭 신청하기</button>
+              </div>
+              <p class="statusMsg">진행중 : 추가정보열람(23.10.31)</p>
+            </section>          
+        </div>
+    </section>
+
+    <div id="openInfoPopupContainer" class="popup_container">
+        <div class="popup_content">
+            <i class="fa-regular fa-rectangle-xmark" id="openInfoXBtn"></i>
+            <p class="popupTitle">추가 정보 열람하기</p>
+            <p class="popupSubTitle" id="openInfoPopupSubTitle">‘비트킴입니당’님의 추가 정보를 열람하시겠습니까?</p>
+            <div class="matchingPoint_container" id="openInfoPoint_container">
+                <div class="userPoint_container">
+                    <span class="userPointTitle">현재 포인트</span>
+                    <span class="userPoint" id="openInfoUserPoint">3,000P</span>
+                </div>
+                <div class="usagePoint_container">
+                    <div class="usagePointTitle_container">
+                        <p class="usagePointTitle">사용 포인트</p>
+                        <p class="usagePointSubtitle" id="openInfoUsagePointSubtitle">(추가 정보 열람)</p>
+                    </div>
+                    <span class="usagePoint" id="openInfoUsagePoint">+1,000P</span>
+                </div>
+                <div class="remainPoint_container">
+                    <span class="remainPointTitle">잔여 포인트</span>
+                    <span class="remainPoint" id="openInfoRemainPoint">3,000P</span>
+                </div>
+            </div>
+            <button class="confrimBtn" id="openInfoConfirmBtn">완료</button>
+            <p class="errorMsg" id="openInfoErrorMsg">포인트가 부족합니다</p>
+        </div>
+    </div>
+
+
+    <div id="matchingOfferPopupContainer" class="popup_container">
+      <div class="popup_content">
+          <i class="fa-regular fa-rectangle-xmark" id="matchingOfferXBtn"></i>
+          <p class="popupTitle">매칭 신청하기</p>
+          <p class="popupSubTitle" id="matchingOfferPopupSubTitle">‘비트킴입니당’님과 매칭을 신청하시겠습니까?</p>
+          <div class="matchingPoint_container" id="matchingOfferPoint_container">
+              <div class="userPoint_container">
+                  <span class="userPointTitle">사용 가능 포인트</span>
+                  <span class="userPoint" id="matchingOfferUserPoint">3,000P</span>
+              </div>
+              <div class="usagePoint_container">
+                  <div class="usagePointTitle_container">
+                      <p class="usagePointTitle">사용 포인트</p>
+                      <p class="usagePointSubtitle" id="matchingOfferUsagePointSubtitle">(매칭 신청 / 전문직)</p>
+                  </div>
+                  <span class="usagePoint" id="matchingOfferUsagePoint">-1,000P</span>
+              </div>
+              <div class="remainPoint_container">
+                  <span class="remainPointTitle">잔여 포인트</span>
+                  <span class="remainPoint" id="matchingOfferRemainPointt">3,000P</span>
+              </div>
+          </div>
+          <!-- <button class="rechargeBtn">포인트 충전하기</button> -->
+          <button class="confrimBtn" id="matchingOfferConfirmBtn">완료</button>
+          <p class="errorMsg" id="matchingOfferErrorMsg">포인트가 부족합니다</p>
+      </div>
+  </div>
+
+  <div id="matchingCancelPopupContainer" class="popup_container">
+      <div class="popup_content">
+          <i class="fa-regular fa-rectangle-xmark" id="matchingCancelXBtn"></i>
+          <p class="popupTitle">매칭 취소하기</p>
+          <p class="popupSubTitle" id="matchingCancelPopupSubTitle">‘비트킴입니당’님과 매칭을 취소하시겠습니까?</p>
+          <div class="matchingPoint_container" id="matchingCancelPoint_container">
+              <div class="userPoint_container">
+                  <span class="userPointTitle">현재 포인트</span>
+                  <span class="userPoint" id="matchingCancelUserPoint">3,000P</span>
+              </div>
+              <div class="usagePoint_container">
+                  <div class="usagePointTitle_container">
+                      <p class="usagePointTitle">환급 포인트</p>
+                      <p class="usagePointSubtitle" id="matchingCancelUsagePointSubtitle">(매칭 신청 / 전문직)</p>
+                  </div>
+                  <span class="usagePoint" id="matchingCancelUsagePoint">+1,000P</span>
+              </div>
+              <div class="remainPoint_container">
+                  <span class="remainPointTitle">총 포인트</span>
+                  <span class="remainPoint" id="matchingCancelRemainPoint">3,000P</span>
+              </div>
+          </div>
+          <button class="confrimBtn" id="matchingCancelConfirmBtn">완료</button>
+          <p class="errorMsg" id="matchingCancelErrorMsg">포인트가 부족합니다</p>
+      </div>
+  </div>
+
+  <div id="matchingAcceptPopupContainer" class="popup_container">
+      <div class="popup_content">
+          <i class="fa-regular fa-rectangle-xmark" id="matchingAcceptXBtn"></i>
+          <p class="popupTitle">매칭 수락하기</p>
+          <p class="popupSubTitle" id="matchingAcceptPopupSubTitle">‘비트킴입니당’님과 매칭을 수락하시겠습니까?</p>
+          <div class="matchingPoint_container" id="matchingAcceptPoint_container">
+              <div class="userPoint_container">
+                  <span class="userPointTitle">현재 포인트</span>
+                  <span class="userPoint" id="matchingAcceptUserPoint">3,000P</span>
+              </div>
+              <div class="usagePoint_container">
+                  <div class="usagePointTitle_container">
+                      <p class="usagePointTitle">사용 포인트</p>
+                      <p class="usagePointSubtitle" id="matchingAcceptUsagePointSubtitle">(매칭 신청 / 전문직)</p>
+                  </div>
+                  <span class="usagePoint" id="matchingAcceptUsagePoint">+1,000P</span>
+              </div>
+              <div class="remainPoint_container">
+                  <span class="remainPointTitle">잔여 포인트</span>
+                  <span class="remainPoint" id="matchingAcceptRemainPoint">3,000P</span>
+              </div>
+          </div>
+          <button class="confrimBtn" id="matchingAcceptConfirmBtn">완료</button>
+          <p class="errorMsg" id="matchingAcceptErrorMsg">포인트가 부족합니다</p>
+      </div>
+  </div>
+
+  <div id="reviewPopupContainer" class="popup_container">
+      <div class="popup_content">
+          <i class="fa-regular fa-rectangle-xmark" id="reviewXBtn"></i>
+          <p class="popupTitle">후기작성</p>
+          <p class="popupSubTitle" id="reviewPopupSubTitle">매칭 이후 ‘비트킴입니당’님은 어땠나요?</p>
+          <div class="toggle_container" id="reviewToggle_container">
+              <!-- <div class="toggleContent_container">
+                  <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                  <span class="toggleContent">약속 시간을 잘 지켜요.</span>
+              </div> -->
+          </div>
+          <button class="confrimBtn" id="reviewConfirmBtn">완료</button>
+          <p class="errorMsg" id="reviewErrorMsg">후기를 선택해주세요</p>
+      </div>
+  </div>
+
+  <div id="reportPopupContainer" class="popup_container">
+      <div class="popup_content">
+          <i class="fa-regular fa-rectangle-xmark" id="reportXBtn"></i>
+          <p class="popupTitle">신고하기</p>
+          <p class="popupSubTitle" id="reportPopupSubTitle">‘비트킴입니당’님은 어떠한 문제가 있었나요?</p>
+          <div class="toggle_container" id="reportToggle_container">
+              <!-- <div class="toggleContent_container">
+                  <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                  <span class="toggleContent">약속 시간을 잘 지켜요.</span>
+              </div> -->
+          </div>
+          <div id="reportInput_container" class="input_container">
+              <textarea name="reportInput" id="reportInput" cols="30" rows="10"></textarea>
+              <span id="reportNOC" class="NOC">0/200</span>
+            </div>
+          <button class="confrimBtn" id="reportConfirmBtn">완료</button>
+          <p class="errorMsg" id="reportErrorMsg">신고 내용을 선택해주세요</p>
+      </div>
+  </div>
+  
+  <div id="overlay" class="overlay"></div>
+
+
+</body>
+</html>

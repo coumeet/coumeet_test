@@ -1,0 +1,1035 @@
+:root {
+    --button-color : #DAEBFF;
+    --button-hover-color : #99C8FF;
+    --subBtn-color : #767373;
+    --point-color : #DB7C8D;
+    --frequency-color : #D9D9D9;
+    --selectBtn-color : #F9F2F2;
+
+    --width-size : 400px;
+    --input-height-size : 45px;
+
+    --font-bigSize : 25px;
+    --font-middleSize : 20px;
+    --font-size : 16px;
+    --font-smallSize : 14px;
+    --font-tooSmallSize : 12px;
+}
+
+.signup_container {
+    margin-top: 140px;
+    width: 100%;
+}
+
+.signupProgress_container {
+    /* margin-top: 100px; 초기 위치 설정 */
+    position: fixed;
+    top : 81px;
+    width: 840px;
+
+    background-color: white;
+    z-index: 900;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+    
+}
+
+.signup_container {
+    /* background-color: red; */
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.signupContent_container {
+    /* background-color: blue; */
+    width: 840px;
+    height: auto;
+}
+
+.signuptitle {
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+}
+
+.pregressTitle {
+    font-size: var(--font-smallSize);
+    margin-bottom: 5px;
+}
+
+.progressBar_container {
+
+    display: flex;
+    flex: row;
+
+    align-items: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.progressBarContainer {
+    width: 100%;
+    height: 10px;
+    background-color: var(--frequency-color);
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.progressBar {
+    height: 100%;
+    width: 10%;
+    border-radius: 10px;
+    background-color: var(--point-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.progressNumber {
+    width: 5%;
+    margin: 0;
+    background-color: white;
+}
+
+.container {
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    
+    margin-bottom: 10px;
+}
+
+.input_container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    border: 1px solid var(--frequency-color);
+    border-radius: 5px;
+    margin: 0;
+
+    padding: 0;
+    padding-left : 10px;
+    
+}
+
+.input_container:hover {
+    border: 1px solid var(--subBtn-color);
+}
+
+.title_container {
+    width: 20%;
+    min-width: 85px;   
+}
+
+.title {
+    width: 20%;
+    min-width: 85px;
+    font-size: var(--font-smallSize);
+    font-weight: bold;
+}
+
+.titleWithBtn {
+    width: 100px;
+    min-width: 80px;
+    font-size: var(--font-smallSize);
+    font-weight: bold;
+}
+
+#auth_container {
+    display: none;
+}
+
+.emailResend_container {
+    display: none;
+}
+
+.emailResendContent_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.emailResendMsg {
+    font-size: var(--font-tooSmallSize);
+    color: var(--subBtn-color);
+    margin-left: 5px;
+}
+
+.emailResendBtn {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    font-size: var(--font-tooSmallSize);
+    color: var(--subBtn-color);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#nickNameInput_container .titleWithBtn {
+    width: 26%;
+    min-width: 80px;
+}
+
+#pwInput_container .title,
+#pw2Input_container .title {
+    width: 19%;
+}
+
+.inputfield {
+    height: calc(var(--input-height-size) - 4px);
+    margin: 0;
+    padding: 0;
+
+    width : 100%;
+    border: transparent;
+}
+
+.inputfield:focus {
+    outline: none;
+}
+
+.inputfield.disabled {
+    color: var(--frequency-color);
+}
+
+.checkBtn {
+    background-color: var(--button-color);
+    border: transparent;
+    border-radius: 5px;
+
+    width : 20%;
+    min-width: 80px;
+    height: var(--input-height-size);
+
+    font-weight: bold;
+    font-size: var(--font-smallSize);
+
+    margin-left: 10px;
+
+    cursor: pointer;
+}
+
+.checkBtn:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.01);
+}
+
+/* 비활성화된 버튼 스타일 */
+.checkBtn:disabled {
+    background-color: var(--frequency-color); /* 배경색을 회색으로 변경 */
+    color: #999; /* 텍스트 색상을 회색으로 변경 */
+    cursor: default;
+}
+
+.errorMsg {
+    font-size: var(--font-tooSmallSize);
+    margin: 0;
+    margin-top: -8px;
+
+    color: var(--point-color);
+    margin-bottom: 20px;
+
+    display: none;
+}
+
+.descriptionMsg {
+    font-size: var(--font-tooSmallSize);
+    color: var(--subBtn-color);
+    margin-left: 10px;
+}
+
+.btns_errorMsg {
+    font-size: var(--font-tooSmallSize);
+    margin: 0;
+    margin-top: 5px;
+    color: var(--point-color);
+    margin-bottom: 20px;
+
+    display: none;
+}
+
+#pw_container {
+    margin-bottom: 5px;
+}
+
+.NOC {
+    font-size: var(--font-tooSmallSize);
+    color: var(--subBtn-color);
+    margin-right: 20px;
+}
+
+#region_container {
+    margin-bottom: 20px;
+}
+
+#regionInput_container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 99%;
+}
+
+#regionInput_container .title {
+    margin-bottom: auto;    
+}
+
+#regionInput_container .title {
+    width: 16%;
+}
+
+.city_container {
+    display: flex;
+    flex-direction: column;
+
+    width: 30%;
+    min-width: 125px;
+    height: 300px;
+
+    overflow: auto;
+    border: 1px solid var(--frequency-color);
+
+    margin: 0;
+    padding: 0;
+}
+
+.gu_container {
+
+    width: 40%;
+    height: 300px;
+
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--frequency-color);
+
+    margin: 0;
+    padding: 0;
+}
+
+#regionInput_container button {
+    width: 100%;
+
+    cursor: pointer;
+    padding: 10px;
+
+    background-color: white;
+    border: 1px solid var(--frequency-color);
+
+    text-align: left;
+}
+
+#regionInput_container button:hover {
+    background-color: var(--frequency-color);
+    font-weight: bold;
+}
+
+#regionInput_container button.selected {
+    background-color: var(--frequency-color);
+    font-weight: bold;
+}
+
+.selectInput {
+    height: calc(var(--input-height-size) - 4px);
+    margin: 0;
+    padding: 0;
+
+    width : 100%;
+    border: transparent;
+
+    -webkit-appearance: none;
+    -moz-appearance: none; /* Firefox */
+    appearance: none; /* 표준 스타일링 속성 */
+
+    cursor: pointer;
+}
+
+.selectInput:focus {
+    outline: none;
+}
+
+#occupationInput_container {
+    margin-bottom: 10px;
+    width: 99%;
+}
+
+#occupationInput_container .title {
+    width: 16.5%;
+}
+
+#occupationDetail_container {
+    width: 100%;
+}
+
+#occupationDetail_container .title {
+    width:20%;
+}
+
+#occupationFileMsg_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--selectBtn-color);
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+}
+
+#occupationFileMsg_container i {
+    cursor: pointer;
+}
+
+.occupationfileName_container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.occupationfileName {
+    margin-right: 5px;
+    font-size: var(--font-smallSize);
+}
+
+.duSelectionMsg {
+    font-size: var(--font-tooSmallSize);   
+    color: var(--point-color);
+}
+
+.btns_container {
+    height: auto;
+
+    width: 98.8%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    border: 1px solid var(--frequency-color);
+    border-radius: 5px;
+
+    margin: 0;
+    margin-bottom: 20px;
+
+    padding: 0;
+    padding-left : 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btns_container:hover {
+    border: 1px solid var(--subBtn-color);
+}
+
+.btns_title {
+    margin-bottom: auto;
+
+    width: 100px;
+    font-size: var(--font-smallSize);
+    font-weight: bold;
+}
+
+#genderBtn {
+    width: 100px;
+}
+
+#genderInput_container .btns_title {
+    width: 15%;
+    margin-bottom: 0;
+}
+
+.btns_btn {
+    width: 20%;
+    min-width: 100px;
+    height: 40px;
+    margin: 5px;
+
+    border: transparent;
+    border-radius: 8px;
+    background : var(--selectBtn-color);
+
+    cursor: pointer;
+}
+
+/* .btns_btn:hover {
+    background-color: var(--point-color);
+    font-weight: bold;
+    color: white;
+} */
+
+.btns_btn.selected {
+    background-color: var(--point-color);
+    border: 2px solid var(--subBtn-color);
+    font-weight: bold;
+    color: white;
+}
+
+#hobbyInput_container .btns_title {
+    width: 100px;
+}
+
+#hobbyBtn {
+    width: 14%;
+}
+
+.readingInfoMsg_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.readingInfoMsgTitle {
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+
+    /* margin-right: 10px; */
+    margin: 0;
+    margin-bottom: 5px;
+
+}
+
+.readingInfoMsgSub {
+    font-size: var(--font-tooSmallSize);
+    color: var(--subBtn-color);
+    margin: 0;
+
+    margin-bottom: 30px;
+}
+
+.picture_container {
+    display: flex;
+    flex-direction: row;
+
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+
+.picturesBtn_container {
+    margin-right: 20px;
+}
+
+.pictureBtn {
+    width: 200px;
+    height: 200px;
+
+    background-color: white;
+    border: 1px solid var(--frequency-color);
+    border-radius: 6px;
+
+    cursor: pointer;
+    overflow: hidden; /* 이미지가 버튼 영역을 벗어나지 않도록 */
+}
+
+.pictureBtn:hover {
+    border: 1px solid var(--subBtn-color);
+}
+
+.fa-plus {
+    font-size: 25px;
+}
+
+.picture_img {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.pictureInput {
+    display: none;
+}
+
+.picture_container .title {
+    width: 18%;
+}
+
+#phoneInput_container .title,
+#phoneCertificationInput_container .title {
+    width: 26%;
+}
+
+#phoneCertification_container {
+    display: none;
+}
+
+
+.datingStyle_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.datingStyleContent_container {
+    width: 50%;
+    min-width: 840px;
+    height: auto;
+}
+
+.datingStyle_title {
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+}
+
+
+.datingStyleBtns_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.dating_title {
+    font-size: var(--font-smallSize);
+    font-weight: bold;
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+.datingStyle_btns_container {
+    margin-right: 20%;
+}
+
+.datingStyleImg {
+    width: 171px;
+    height: 480px;
+    margin: auto auto;
+}
+
+.dating_btn {
+    width: auto;
+    padding: 10px 10px;
+    height: auto;
+    border-radius: 10px;
+    background-color: var(--selectBtn-color);
+    border: transparent;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.dating_btn:hover {
+    background-color: var(--point-color);
+    font-weight: bold;
+    color: white;
+}
+
+.dating_btn.selected {
+    background-color: var(--point-color);
+    font-weight: bold;
+    color: white;
+}
+
+.dating_errorMsg {
+    font-size: var(--font-tooSmallSize);
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+
+    color: var(--point-color);
+
+    display: none;
+}
+
+.letter_container {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.letterContent_container {
+    width: 50%;
+    height: auto;
+}
+
+.letterTitle {
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#letterInput_container {
+    /* background-color: rebeccapurple; */
+    height: 100px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#letterInput {
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+    border: transparent;
+    resize: none;
+    font-size: var(--font-smallSize);
+    font-family: Inter;
+}
+
+#letterInput:focus {
+    outline: none;
+}
+
+#letterNOC {
+    margin-left: auto;
+}
+
+#letterErrorMsg {
+    margin-top: 5px;
+}
+
+#letterdescriptionMsg {
+    margin-top: 5px;
+}
+
+
+.confirmBtns_container {
+    margin-top: 100px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmBtn_container {
+
+    padding-top: 100px;
+
+    width: 50%;
+    height: auto;   
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: flex-end;
+
+    margin-bottom: 100px;
+}
+
+/* 동의 꾸미기 */
+
+.agreement_container{ 
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 5px; */
+
+}
+
+.agreementContent_container {
+    width: 50%;
+    /* border-top: 1px solid var(--frequency-color);
+    border-bottom: 1px solid var(--frequency-color); */
+    background-color: var(--selectBtn-color);
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 12px;
+}
+
+.agreementContentSub_container {
+    margin-left: 20px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.agreementContentSub_container i{
+    font-size: var(--font-size);
+}
+
+
+.totalBtnTitle,
+#totalBtn {
+    font-size: var(--font-middleSize);
+}
+
+.totalContent {
+    font-size: var(--font-smallSize);
+    font-weight: bold;
+    color: var(--subBtn-color);
+    margin-left: 20px;
+    margin-top: 0;
+
+}
+
+.totalBtnTitle {
+    font-weight: bold;
+}
+
+.totalBtn_container {
+    cursor: pointer;
+}
+
+.btn_container {
+    cursor: pointer;
+}
+
+.seeAllBtn {
+    margin-left: 5px;
+    background-color: transparent;
+    border: transparent;
+    font-size: var(--font-tooSmallSize);
+    margin-left: 0;
+    color: var(--subBtn-color);
+    cursor: pointer;
+}
+
+.seeAllBtn:hover{
+    font-weight: bold;
+}
+
+.needBtn {
+    color: var(--point-color);
+    font-weight: bold;
+}
+
+.optionBtn {
+    color: var(--subBtn-color);
+}
+
+.hobbyBtn_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.regionContent_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#idInput_container .titleWithBtn {
+    width: 23%;
+}
+
+#occupation_container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.occupationFile_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+#occupationDetailInput_container {
+    width: 100%;
+}
+
+#occupationCheckBtn {
+    min-width: 115px;
+}
+
+.letterContent_container {
+    min-width: 820px;
+}
+
+.agreementContent_container {
+    min-width: 820px;
+}
+
+.selectBtns_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#authInput_container .titleWithBtn {
+    width: 23%;
+}
+
+
+/* 테블릿 */
+@media screen and (max-width: 1023px) {
+
+    .signupContent_container {
+        width: 80%;
+    }
+    
+    .signupProgress_container {
+        width: 80%;
+    }
+
+    .datingStyleContent_container {
+        width: 70%;
+        min-width: 600px;
+    }
+
+    .pictureBtn {
+        width: 150px;
+        height: 150px;
+    }
+
+    .letterContent_container {
+        width: 70%;
+        min-width: 600px;
+    }
+
+    .agreementContent_container {
+        width: 70%;
+        min-width: 600px;
+    }
+
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+
+    .signupContent_container {
+        width: 90%;
+    }
+
+    .signupProgress_container {
+        width: 100%;
+        top: 50px;
+    }
+
+    .progressBar_container {
+        width: 85%;
+    }
+
+    .btns_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    .btns_title {
+        margin-left: 10px;
+    }
+
+    #hobbyBtn {
+        min-width: 65px;
+    }
+
+    #regionInput_container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gu_container {
+        width: 55%;
+    }
+
+    #regionInput_container .title {
+        margin-bottom: 10px;
+        margin-left: 5px;
+    }
+
+    #genderInput_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+    }
+
+    #genderInput_container .btns_title {
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+
+    #occupationInput_container {
+        width: 97%;
+    }
+
+    #regionInput_container {
+        width: 97%;
+    }
+
+    .picture_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .picturesBtn_container {
+        margin-bottom: 10px;
+    }
+
+    .picture_container .title {
+        margin-bottom: 5px;
+    }
+
+    #genderInput_container .btns_title {
+        min-width: 80px;
+    }
+
+    .datingStyleContent_container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        min-width: 0;
+    }
+
+    .datingStyleBtns_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pictureBtn {
+        width: 200px;
+        height: 200px;
+    }
+
+    .datingStyle_btns_container {
+        margin-right: 0;
+    }
+
+    .datingStyleImg {
+        width: 131px;
+        height: 410px;
+    }
+
+    .letterContent_container {
+        width: 90%;
+        min-width: 0;
+    }
+
+    #letterInput_container {
+        width: 90%;
+    }
+
+    #letterdescriptionMsg {
+        margin-left: 0;
+    }
+
+    .agreementContent_container {
+        width: 90%;
+        min-width: 0;
+        max-width: 550px;
+    }
+
+}

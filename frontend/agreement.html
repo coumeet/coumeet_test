@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="agreement_style.css">
+    <script src="agreement_script.js" defer></script>
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <title>Agreement</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });    
+    </script>
+    
+    <section class="agreement">
+        <section class="agreement_container">
+            <div class="total_container">
+                <div class="totalBtn_container">
+                    <i class="fa-regular fa-circle-check" style="color: #d9d9d9;" id="totalBtn"></i>
+                    <span class="totalBtnTitle">전체 동의하기</span>
+                </div>
+                <p class="totalContent">실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.</p>
+            </div>
+
+            <div class="termsofuse_container">
+                <div class="btn_container" id="termsofuseBtn_container">
+                    <i class="fa-regular fa-circle-check" style="color: #d9d9d9;" id="termsofuseBtn"></i>
+                    <span class="termsofuseBtnTitleOption">[필수]</span>
+                    <span class="termsofuseBtnTitle">이용약관 동의</span>
+                    <button class="termsofuseBtnTitleSeeAll">전체</button>
+                </div>
+                <div class="termsofuseContent_container">
+                    <p class="termsofuseContent">실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.</p>
+                </div>
+            </div>
+
+            <div class="privacy_container">
+                <div class="btn_container" id="privacyBtn_container">
+                    <i class="fa-regular fa-circle-check" style="color: #d9d9d9;" id="privacyBtn"></i>
+                    <span class="privacyBtnTitleOption">[필수]</span>
+                    <span class="privacyBtnTitle">개인정보 수집 동의</span>
+                    <button class="privacyBtnTitleSeeAll">전체</button>
+                </div>
+                <div class="privacyContent_container">
+                    <p class="privacyContent">실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.</p>
+                </div>
+            </div>
+
+            <div class="marketing_container">
+                <div class="btn_container" id="marketingBtn_container">
+                    <i class="fa-regular fa-circle-check" style="color: #d9d9d9;" id="marketingBtn"></i>
+                    <span class="marketingTitleOption">[선택]</span>
+                    <span class="marketingTitle">마케팅 이용 동의</span>
+                    <button class="marketingTitleSeeAll">전체</button>
+                </div>
+                <div class="marketingContent_container">
+                    <p class="marketingContent">실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다. 실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.</p>
+                </div>
+            </div>
+
+            <button class="confirm">다음</button>
+        </section>
+    </section>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="dashboard_script.js" defer></script>
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="dashboard_style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });    
+    </script>
+
+    <section class="listBtns_container">
+        <div class="btns_container">
+            <button class="openListBtn">정보 열람</button>
+            <button class="offerListBtn">보낸 신청</button>
+            <button class="receiveListBtn">받은 신청</button>
+            <button class="matchingListBtn">매칭 완료</button>
+        </div>
+    </section>
+
+    <section class="userList_container">
+        <div class="list_container">
+            <!-- <div class="user_container">
+                <div class="status_container">
+                    <span class="statusTitle">답변 대기중</span>
+                    <span class="statusDate">(D - 7)</span>
+                </div>
+                <div class="content_container">
+                    <img src="/backend/uploads/e.png" alt="" class="userImg">
+                    <div class="userInfo_container">
+                        <div class="leftContent_container">
+                            <div class="profileInfo_container">
+                                <p class="regionInfo">경기도 용인시 수지구</p>
+                                <p class="nicknameInfo"><span class="infoTitle">닉네임 : </span><span class="infoText">비트킴입니당</span> </p>
+                                <p class="AgeInfo"><span class="infoTitle">나이 : </span><span class="infoText">33 살</span></p>
+                                <p class="heightInfo"><span class="infoTitle">키 : </span><span class="infoText">177cm</span></p>
+                                <p class="occupationInfo"><span class="infoTitle">직업 : </span><span class="infoText">전문직(변호사, 검판사 등)</span></p>
+                                <p class="mbtiInfo"><span class="infoTitle">MBTI : </span><span class="infoText">ESTJ</span></p>
+                                <p class="styleInfo"><span class="infoTitle">스타일 : </span><span class="infoText">깔끔함</span></p>
+                                <p class="bodyTypeInfo"><span class="infoTitle">체형 : </span><span class="infoText">보통</span></p>
+                                <p class="personalityInfo"><span class="infoTitle">성격 : </span><span class="infoText">지적인, 차분한, 유머있는</span></p>
+                                <p class="drinkingInfo"><span class="infoTitle">음주 : </span><span class="infoText">가끔 마심</span></p>
+                            </div>
+                        </div>
+                        <div class="profileHobbyInfo_container">
+                            <div class="hobbyInfo"><span>클라이밍</span></div>
+                            <div class="hobbyInfo"><span>작문,시쓰기</span></div>
+                            <div class="hobbyInfo"><span>등산</span></div>
+                            <div class="hobbyInfo"><span>스킨스쿠버</span></div>
+                            <div class="hobbyInfo"><span>드라이빙</span></div>
+                            <div class="hobbyInfo"><span>마라톤</span></div>
+                        </div>                    
+                    </div>
+                    <div class="rightBtn_container">
+                        <p class="offerDate">신청일 : 2023-08-10</p>
+                        <button class="confirmBtn" id="offerCancleBtn">취소하기</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="pagination">
+        <ul>
+            <!-- <li class="prev"><</li>
+            <li class="page active">1</li>
+            <li class="page">2</li>
+            <li class="page">3</li>
+            <li class="next">></li> -->
+        </ul>
+    </section>
+
+    <section class="resultNotFound">
+        <div class="resultNotFound_container">
+            <p class="resultNotFoundMsg">매칭되는 목록이 없습니다.<br>나의 매칭 상대를 찾기 위해서 활동해주세요 :)</p>
+            <img src="img/12.png" alt="" class="resultNotFoundImg">
+        </div>
+    </section>
+
+    <div id="matchingOfferPopupContainer" class="popup_container">
+        <div class="popup_content">
+            <i class="fa-regular fa-rectangle-xmark" id="matchingOfferXBtn"></i>
+            <p class="popupTitle">매칭 신청하기</p>
+            <p class="popupSubTitle" id="matchingOfferPopupSubTitle">‘비트킴입니당’님과 매칭을 신청하시겠습니까?</p>
+            <div class="matchingPoint_container" id="matchingOfferPoint_container">
+                <div class="userPoint_container">
+                    <span class="userPointTitle">사용 가능 포인트</span>
+                    <span class="userPoint" id="matchingOfferUserPoint">3,000P</span>
+                </div>
+                <div class="usagePoint_container">
+                    <div class="usagePointTitle_container">
+                        <p class="usagePointTitle">사용 포인트</p>
+                        <p class="usagePointSubtitle" id="matchingOfferUsagePointSubtitle">(매칭 신청 / 전문직)</p>
+                    </div>
+                    <span class="usagePoint" id="matchingOfferUsagePoint">-1,000P</span>
+                </div>
+                <div class="remainPoint_container">
+                    <span class="remainPointTitle">잔여 포인트</span>
+                    <span class="remainPoint" id="matchingOfferRemainPointt">3,000P</span>
+                </div>
+            </div>
+            <!-- <button class="rechargeBtn">포인트 충전하기</button> -->
+            <button class="confrimBtn" id="matchingOfferConfirmBtn">완료</button>
+            <p class="errorMsg" id="matchingOfferErrorMsg">포인트가 부족합니다</p>
+        </div>
+    </div>
+
+    <div id="matchingCancelPopupContainer" class="popup_container">
+        <div class="popup_content">
+            <i class="fa-regular fa-rectangle-xmark" id="matchingCancelXBtn"></i>
+            <p class="popupTitle">매칭 취소하기</p>
+            <p class="popupSubTitle" id="matchingCancelPopupSubTitle">‘비트킴입니당’님과 매칭을 취소하시겠습니까?</p>
+            <div class="matchingPoint_container" id="matchingCancelPoint_container">
+                <div class="userPoint_container">
+                    <span class="userPointTitle">현재 포인트</span>
+                    <span class="userPoint" id="matchingCancelUserPoint">3,000P</span>
+                </div>
+                <div class="usagePoint_container">
+                    <div class="usagePointTitle_container">
+                        <p class="usagePointTitle">환급 포인트</p>
+                        <p class="usagePointSubtitle" id="matchingCancelUsagePointSubtitle">(매칭 신청 / 전문직)</p>
+                    </div>
+                    <span class="usagePoint" id="matchingCancelUsagePoint">+1,000P</span>
+                </div>
+                <div class="remainPoint_container">
+                    <span class="remainPointTitle">총 포인트</span>
+                    <span class="remainPoint" id="matchingCancelRemainPoint">3,000P</span>
+                </div>
+            </div>
+            <button class="confrimBtn" id="matchingCancelConfirmBtn">완료</button>
+            <p class="errorMsg" id="matchingCancelErrorMsg">포인트가 부족합니다</p>
+        </div>
+    </div>
+
+    <div id="matchingAcceptPopupContainer" class="popup_container">
+        <div class="popup_content">
+            <i class="fa-regular fa-rectangle-xmark" id="matchingAcceptXBtn"></i>
+            <p class="popupTitle">매칭 수락하기</p>
+            <p class="popupSubTitle" id="matchingAcceptPopupSubTitle">‘비트킴입니당’님과 매칭을 수락하시겠습니까?</p>
+            <div class="matchingPoint_container" id="matchingAcceptPoint_container">
+                <div class="userPoint_container">
+                    <span class="userPointTitle">현재 포인트</span>
+                    <span class="userPoint" id="matchingAcceptUserPoint">3,000P</span>
+                </div>
+                <div class="usagePoint_container">
+                    <div class="usagePointTitle_container">
+                        <p class="usagePointTitle">사용 포인트</p>
+                        <p class="usagePointSubtitle" id="matchingAcceptUsagePointSubtitle">(매칭 신청 / 전문직)</p>
+                    </div>
+                    <span class="usagePoint" id="matchingAcceptUsagePoint">+1,000P</span>
+                </div>
+                <div class="remainPoint_container">
+                    <span class="remainPointTitle">잔여 포인트</span>
+                    <span class="remainPoint" id="matchingAcceptRemainPoint">3,000P</span>
+                </div>
+            </div>
+            <button class="confrimBtn" id="matchingAcceptConfirmBtn">완료</button>
+            <p class="errorMsg" id="matchingAcceptErrorMsg">포인트가 부족합니다</p>
+        </div>
+    </div>
+
+    <div id="reviewPopupContainer" class="popup_container">
+        <div class="popup_content">
+            <i class="fa-regular fa-rectangle-xmark" id="reviewXBtn"></i>
+            <p class="popupTitle">후기작성</p>
+            <p class="popupSubTitle" id="reviewPopupSubTitle">매칭 이후 ‘비트킴입니당’님은 어땠나요?</p>
+            <div class="toggle_container" id="reviewToggle_container">
+                <!-- <div class="toggleContent_container">
+                    <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                    <span class="toggleContent">약속 시간을 잘 지켜요.</span>
+                </div> -->
+            </div>
+            <button class="confrimBtn" id="reviewConfirmBtn">완료</button>
+            <p class="errorMsg" id="reviewErrorMsg">후기를 선택해주세요</p>
+        </div>
+    </div>
+
+    <div id="reportPopupContainer" class="popup_container">
+        <div class="popup_content">
+            <i class="fa-regular fa-rectangle-xmark" id="reportXBtn"></i>
+            <p class="popupTitle">신고하기</p>
+            <p class="popupSubTitle" id="reportPopupSubTitle">‘비트킴입니당’님은 어떠한 문제가 있었나요?</p>
+            <div class="toggle_container" id="reportToggle_container">
+                <!-- <div class="toggleContent_container">
+                    <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                    <span class="toggleContent">약속 시간을 잘 지켜요.</span>
+                </div> -->
+            </div>
+            <div id="reportInput_container" class="input_container">
+                <textarea name="reportInput" id="reportInput" cols="30" rows="10"></textarea>
+                <span id="reportNOC" class="NOC">0/200</span>
+              </div>
+            <button class="confrimBtn" id="reportConfirmBtn">완료</button>
+            <p class="errorMsg" id="reportErrorMsg">신고 내용을 선택해주세요</p>
+        </div>
+    </div>
+    
+    <div id="overlay" class="overlay"></div>
+    
+    
+</body>
+</html>

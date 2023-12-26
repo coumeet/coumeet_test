@@ -1,0 +1,116 @@
+:root {
+    --button-color : #DAEBFF;
+    --button-hover-color : #99C8FF;
+    --button-hover-outline-color : #81BBFF;
+    --subBtn-color : #767373;
+    --point-color : #DB7C8D;
+    --frequency-color : #D9D9D9;
+    --selectBtn-color : #F9F2F2;
+
+    --width-size : 400px;
+    --input-height-size : 45px;
+
+    --font-bigSize : 25px;
+    --font-middleSize : 20px;
+    --font-normalSize : 18px;
+    --font-size : 16px;
+    --font-smallSize : 14px;
+    --font-tooSmallSize : 12px;
+    --font-theSmallestSize : 10px;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+    font-family: Inter;
+    /* height: 100vh; */
+}
+
+.aimatching {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 120px;
+}
+
+.aimatching_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.aimatchingTitle_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.aimatchingContent_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aimatchingImg_1,
+.aimatchingImg_2,
+.aimatchingImg_3 {
+    width: 500px;
+    height: auto;
+}
+
+.aimatchingImg_4 {
+    width: 300px;
+    height: auto;
+}
+
+.aimatching_container p {
+    margin: 0;
+}
+
+.aimatchingTitle {
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+}
+
+.aimatchingSubTitle {
+    font-size: var(--font-middleSize);
+    font-weight: bold;
+    color: var(--point-color); 
+}
+
+.aimatchingImg_1,
+.aimatchingImg_2,
+.aimatchingImg_3,
+.aimatchingImg_4 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: var(--point-color); 
+}
+
+.aimatchingContent_4 {
+    font-weight: bold;
+    margin-bottom: 20px !important;
+}
+
+.aimatchingContent_5 {
+    font-weight: bold;
+    color: var(--point-color); 
+}
+
+.aimatchingImg_4 {
+    margin-bottom: 200px;
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+    .aimatchingImg_1, .aimatchingImg_2, .aimatchingImg_3 {
+        width: 350px;
+    }
+}

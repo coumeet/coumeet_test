@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="login_style.css">
+    <script src="login_script.js" defer></script>
+    <title>Login</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+    <section class="head_container">
+        <section class="login_container">
+            <img src="./img/logo.png" alt="" class="loginLogo">
+            <input type="text" class="idInput" placeholder="아이디(이메일)">
+            <input type="password" class="pwInput" placeholder="비밀번호">
+            <button class="loginBtn">로그인</button>
+            <p class="loginErrorMsg">아이디/비밀번호를 확인해주세요.</p>
+            <div class="subBtn_cotainer">
+                <button class="loginStatusBtn" style="display: none;">
+                    <i class="fa-regular fa-circle-check" style="color: #767373;"></i>
+                    <p>로그인 상태 유지</p>
+                </button>
+                <button class="findIdPwBtn">아이디·비밀번호 찾기</button>
+            </div>
+            <p class="eventMsg">지급 회원가입 하면 3000P 지급해 드려요!</p>
+            <button class="signUpBtn">회원가입</button>
+        </section>
+    </section>
+
+</body>
+</html>

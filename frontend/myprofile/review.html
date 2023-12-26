@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="review_style.css">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <script src="review_script.js" defer></script>
+    <title>Review</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "../navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+    <section class="myProfile">
+        <section class="myProfile_container">
+            <div id="leftmenubar"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    fetch('leftmenubar.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('leftmenubar').innerHTML = data;
+                        // leftmenubar.html의 내용이 로드된 후에 leftmenubar_script.js를 실행
+                        let script = document.createElement("script");
+                        script.src = "leftmenubar_script.js";
+                        document.head.appendChild(script);
+                    });
+                });
+            </script>
+            <section class="rightContent_container">
+                <section class="reviewContent_cotainer">
+                    <p class="reviewTitle">매너 후기</p>
+                    <p class="reviewSubtitle">매너후기를 받는 것은 매우 중요합니다.<br>이는 매칭을 하는데 큰 영향을 줍니다.</p>
+                    <div class="mannersInfo_container">
+                        <!-- <div class="mannerDetail_container" id="appointmentManner_container">
+                        <span class="mannersInfoTitle" id="appointmentMannerTItle">1. 약속 시간을 잘 지켜요.</span>
+                        <i class="fa-solid fa-user-group" style="color: #000000;"></i>
+                        <span class="mannersInfoResult" id="appointmentMannerResult">(0)</span>
+                        </div>
+                        <div class="mannerDetail_container" id="contactManner_container">
+                            <span class="mannersInfoTitle" id="contactMannerTItle">2. 연락을 잘 받아요.</span>
+                            <i class="fa-solid fa-user-group" style="color: #000000;"></i>
+                            <span class="mannersInfoResult" id="contactMannerResult">(0)</span>
+                        </div>
+                        <div class="mannerDetail_container" id="replyManner_container">
+                            <span class="mannersInfoTitle" id="replyMannerTItle">3. 답변을 잘해요.</span>
+                            <i class="fa-solid fa-user-group" style="color: #000000;"></i>
+                            <span class="mannersInfoResult" id="replyMannerResult">(0)</span>
+                        </div>
+                        <div class="mannerDetail_container" id="basicManner_container">
+                            <span class="mannersInfoTitle" id="basicMannerTItle">4. 매너가 좋아요.</span>
+                            <i class="fa-solid fa-user-group" style="color: #000000;"></i>
+                            <span class="mannersInfoResult" id="basicMannerResult">(0)</span>
+                        </div> -->
+                    </div>
+                </section>
+            </section>
+        </section>
+    </section>
+</body>
+</html>

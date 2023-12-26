@@ -1,0 +1,76 @@
+:root {
+    --button-color : #DAEBFF;
+    --button-hover-color : #99C8FF;
+    --subBtn-color : #767373;
+    --point-color : #DB7C8D;
+    --frequency-color : #D9D9D9;
+    --selectBtn-color : #F9F2F2;
+
+    --width-size : 400px;
+    --input-height-size : 45px;
+
+    --font-bigSize : 25px;
+    --font-middleSize : 20px;
+    --font-size : 16px;
+    --font-smallSize : 14px;
+    --font-tooSmallSize : 12px;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+    
+}
+
+.leftMenu_container {
+    margin-right: 100px;
+}
+
+.leftMenu_container img {
+    width: 175px;
+    height: 175px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+
+}
+
+.menu_container {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--frequency-color);
+    padding-top: 20px;
+}
+
+.menu_container a {
+    text-decoration: none;
+    color : black;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.menu_container a:hover {
+    font-weight: bold;    
+    color: var(--point-color);
+}
+
+.menu_container a.selected {
+    font-weight: bold;    
+    color: var(--point-color);
+}
+
+/* 테블릿 */
+@media screen and (max-width: 1023px) {
+
+    .leftMenu_container {
+        margin-right: 50px;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+    .leftMenu_container {
+        display: none;
+    }
+}

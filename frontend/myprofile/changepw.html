@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="changepw_style.css">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <script src="changepw_script.js" defer></script>
+    <title>ChangePassword</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                // navbar.html의 내용이 로드된 후에 navbar_script.js를 실행
+                let script = document.createElement("script");
+                script.src = "../navbar_script.js";
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+
+<section class="myProfile">
+    <section class="myProfile_container">
+        <div id="leftmenubar"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('leftmenubar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('leftmenubar').innerHTML = data;
+                    // leftmenubar.html의 내용이 로드된 후에 leftmenubar_script.js를 실행
+                    let script = document.createElement("script");
+                    script.src = "leftmenubar_script.js";
+                    document.head.appendChild(script);
+                });
+            });
+        </script>
+        <section class="rightContent_container">
+            <section class="changePwContent_cotainer">
+                <p class="changePwTitle">비밀번호 변경</p>
+                <div class="pwInputfield_container">
+                    <div id="pw_container" class="container">
+                        <div id="currentPwInput_container" class="input_container">
+                            <div class="title">현재 비밀번호</div>
+                            <input type="password" class="inputfield" id="currentPw" placeholder="입력해주세요">
+                        </div>
+                        <p class="pwErrorMsg" id="currentPwErrorMsg">현재 비밀번호를 확인해주세요</p>
+                    </div>
+                    <div id="changepw_container" class="container">
+                        <div id="pwInput_container" class="input_container">
+                            <div class="title">새 비밀번호</div>
+                            <input type="password" class="inputfield" id="changePw" placeholder="입력해주세요">
+                        </div>
+                    </div>
+                    <div id="changepw2_container" class="container">
+                        <div id="pw2Input_container" class="input_container">
+                            <div class="title">새 비밀번호 확인</div>
+                            <input type="password" class="inputfield" id="changePw2" placeholder="입력해주세요">
+                        </div>
+                        <p class="pwErrorMsg" id="changePwErrorMsg">현재 비밀번호를 확인해주세요</p>
+                    </div>
+                </div>
+                <button class="confirmBtn">확인</button>
+            </section>
+        </section>
+    </section>
+</section>
+</body>
+</html>

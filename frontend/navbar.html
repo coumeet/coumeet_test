@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/navbar_style.css">
+    <script src="https://kit.fontawesome.com/c2c3e05a10.js" crossorigin="anonymous"></script>
+    <script src="navbar_script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="navbar_container">
+        <button class="menuBtn">
+            <i class="fa-solid fa-bars" style="color: #000000;"></i>
+        </button>
+        <img src="/img/logo.png" alt="" class="logo">
+        <nav class="navbarLink_container" id="navbarLinksContainer">
+            <a href="" class="serviceInfo">서비스 소개</a>
+            <a href="" class="matchingListLink">매칭 리스트♥</a>
+            <a href="" class="aimatchingLink">AI 매칭<span class="pointText">(준비중)</span></a>
+            <a href="" class="faq">FAQ문의</a>
+            <a href="" class="loginLink">로그인</a>
+        </nav>
+
+    </section>
+    <script>console.log(`navbar.html`);</script>
+
+        <div id="navbarPointRechargePopupContainer" class="navbarPopup_container">
+        <div class="popup_content">
+            <i class="fa-regular fa-rectangle-xmark" id="navbarPointRechargeXBtn"></i>
+            <p class="popupTitle">충전하기</p>
+            <p class="popupSubTitle" id="pointRechargePopupSubTitle">충전할 포인트 금액을 선택해주세요.</p>
+            <p class="popupSubSubTitle" id="pointRechargePopupSubSubTitle">(1P = 10원, 결제 수수료가 포함된 금액입니다)</p>
+            <div class="pointRechargePoint_container" id="pointRechargePoint_container">
+                <div class="userPoint_container">
+                    <span class="userPointTitle">현재 포인트</span>
+                    <span class="userPoint" id="navbarPointRechargeUserPoint">3,000P</span>
+                </div>
+                <div class="usagePoint_container" id="pointRechargeUsagePoint_container">
+                    <div class="usagePointTitle_container">
+                        <div class="pointRechargeUsagePointTitle_container">
+                            <span class="usagePointTitle" id="pointRechargeUsagePointTitle">충전 포인트</span>
+                            <span class="usagePoint" id="navbarPointRechargeUsagePoint">+ 0P</span>
+                        </div>
+                        <div class="toggle_container" id="navbarPointRechargeToggle_container">
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">450P</span>
+                                <span class="rechargePointAmount">(약 4,500원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">900P</span>
+                                <span class="rechargePointAmount">(약 9,000원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">1,900P</span>
+                                <span class="rechargePointAmount">(약 19,000원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">2,900P</span>
+                                <span class="rechargePointAmount">(약 29,000원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">3,900P</span>
+                                <span class="rechargePointAmount">(약 39,000원)</span>
+                            </div>
+                            <div class="toggleContent_container">
+                                <i class="fa-regular fa-circle" style="color: #000000;"></i>
+                                <span class="rechargePoint">4,900P</span>
+                                <span class="rechargePointAmount">(약 49,000원)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="totalPoint_container">
+                    <span class="totalPointTitle">총 포인트</span>
+                    <span class="totalPoint" id="navbarPointRechargeTotalPoint">3,000P</span>
+                </div>
+            </div>
+            <button class="confrimBtn" id="navbarPointRechargeConfirmBtn">완료</button>
+            <p class="errorMsg" id="pointRechargeErrorMsg">포인트가 부족합니다</p>
+        </div>
+    </div>
+
+    <div id="navbarOverlay" class="navbarOverlay"></div>
+    <div id="pointRechargeOverlay" class="pointRechargeOverlay"></div>
+</body>
+</html>

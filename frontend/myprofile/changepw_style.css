@@ -1,0 +1,158 @@
+:root {
+    --button-color : #DAEBFF;
+    --button-hover-color : #99C8FF;
+    --subBtn-color : #767373;
+    --point-color : #DB7C8D;
+    --frequency-color : #D9D9D9;
+    --selectBtn-color : #F9F2F2;
+
+    --width-size : 400px;
+    --input-height-size : 45px;
+
+    --font-bigSize : 25px;
+    --font-middleSize : 20px;
+    --font-size : 16px;
+    --font-smallSize : 14px;
+    --font-tooSmallSize : 12px;
+}
+
+.myProfile {
+    width: 100%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.myProfile_container {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+    
+}
+
+.rightContent_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.changePwContent_cotainer {
+    width: 100%;
+}
+
+.changePwTitle {
+    font-weight: bold;
+}
+
+.input_container {
+    width: 70%;
+    min-width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    border: 2px solid var(--frequency-color);
+    border-radius: 5px;
+    margin: 0;
+
+    padding: 0;
+    padding-left : 10px;
+
+}
+
+.input_container:hover {
+    border: 2px solid var(--subBtn-color);
+}
+
+.input_container.selected {
+    border: 2px solid var(--point-color);
+}
+
+.inputfield {
+    height: calc(var(--input-height-size) - 4px);
+    margin: 0;
+    padding: 0;
+
+    width : 100%;
+    border: transparent;
+}
+
+.inputfield:focus {
+    outline: none;
+}
+
+.title {
+    width: 30%;
+    min-width: 100px;
+    font-size: var(--font-smallSize);
+    font-weight: bold;
+}
+
+.confirmBtn {
+    background-color: var(--button-color);
+    border: transparent;
+    border-radius: 5px;
+
+    width : 15%;
+    min-width: 100px;
+    height: var(--input-height-size);
+
+    font-weight: bold;
+    font-size: var(--font-smallSize);
+    cursor: pointer;
+}
+
+.confirmBtn:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.01);
+}
+
+#pw_container {
+    margin-bottom: 20px;
+}
+
+#changepw_container {
+    margin-bottom: 5px;
+}
+
+#changepw2_container {
+    margin-bottom: 20px;
+}
+
+.pwErrorMsg {
+    font-size: var(--font-tooSmallSize);
+    margin: 0;
+    margin-top: 5px;
+
+    color: red;
+    margin-bottom: 10px;
+
+    display: none;
+}
+
+/* 테블릿 */
+@media screen and (max-width: 1023px) {
+    .myProfile_container {
+        width: 90%;
+    }
+}
+  
+/* 모바일 */
+@media screen and (max-width: 767px) {
+    .input_container {
+        width: 90%;
+    }
+
+    .myProfile {
+        margin-top: 80px;
+    }
+}
