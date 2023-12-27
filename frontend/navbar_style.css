@@ -18,8 +18,13 @@
     --font-theSmallestSize : 10px;
 }
 
+@font-face {
+    font-family: 'Spoqa Han Sans Regular';
+    src: url(fonts/Spoqa-Han-Sans-Regular.woff)format('woff');
+}
+
 body {
-    font-family: Inter;
+    font-family: 'Spoqa Han Sans Regular';
 }
 
 /* 로고 사이즈 정하기 */

@@ -22,7 +22,6 @@
 body {
     margin : 0;
     padding: 0;
-    font-family: Inter;
     width: 100%;
 }
 
@@ -70,4 +69,15 @@ body {
     font-size: var(--font-tooSmallSize) !important;
     color: var(--point-color) !important;;
     margin-top: 5px;
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) { 
+    .aLink_container a {
+        font-size: var(--font-tooSmallSize);
+    }
+
+    .text_container span {
+        font-size: var(--font-tooSmallSize);
+    }
 }

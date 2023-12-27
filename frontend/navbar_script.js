@@ -1,7 +1,7 @@
 "use strict"
 
-// const hostURL = 'http://localhost:3000/';
-const hostURL = 'http://coumeet.net/';
+const hostURL = 'http://localhost:3000/';
+// const hostURL = 'http://coumeet.net/';
 
 
 const pointcolor = '#DB7C8D';

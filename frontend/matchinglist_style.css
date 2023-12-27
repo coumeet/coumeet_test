@@ -22,7 +22,6 @@
 body {
     margin : 0;
     padding: 0;
-    font-family: Inter;
     /* height: 100vh; */
 }
 
@@ -553,7 +552,7 @@ body {
 }
 
 .mobilecategoryBtn {
-    width: 90px;
+    width: 80px;
     height: 40px;
     margin: 5px;
 
@@ -662,13 +661,13 @@ body {
     }
 
     .profileImg_container {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 
     .profileImg_container img {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 
     .profileHobbyInfo_container {
@@ -676,7 +675,7 @@ body {
     }
 
     .matchingPerson_container {
-        width: 150px;
+        width: 120px;
     }
 
 
@@ -693,4 +692,13 @@ body {
     .downCategory_container button {
         justify-content: center;
     }
+
+    .regionInfo {
+        font-size: var(--font-theSmallestSize);
+    }
+    
+    .profileInfo_container p {
+        font-size: var(--font-theSmallestSize);
+    }
+    
 }

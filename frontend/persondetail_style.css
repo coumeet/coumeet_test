@@ -619,6 +619,8 @@ body {
 
     .datingStyleImg {
         margin-top: 50px;
+        width: 150px;
+        height: calc(150px * 1.92);
     }
 
     .picture_container {
@@ -648,6 +650,26 @@ body {
 
     .introduceMeInfo_container {
         margin-top: 50px;
+    }
+
+    .introduceMeInfoDetailContent_container span {
+        font-size: var(--font-smallSize);
+    }
+
+    .datingStyleSubtitle {
+        font-size: var(--font-tooSmallSize);
+    }
+
+    .mannersSubtitle {
+        font-size: var(--font-tooSmallSize);
+    }
+
+    .dating_btn {
+        font-size: var(--font-theSmallestSize);
+    }
+
+    .additionalInfoDetail_container {
+        width: 80%;
     }
 
 }

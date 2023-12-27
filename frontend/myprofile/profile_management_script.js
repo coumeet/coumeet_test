@@ -1,6 +1,5 @@
 "use strict";
 
-// let hostURL = 'http://localhost:3000/';
 
 const pointColor = "#DB7C8D";
 const frequencyColor = "#D9D9D9";
@@ -1673,7 +1672,7 @@ requestSignupData().then(()=> {
             console.log('모든 사진 업로드가 완료되지 않았습니다.');
 
             pictureErrorMsg.style.display = "block";
-            pictureErrorMsg.innerHTML = "필수 입력 사항입니다.";
+            pictureErrorMsg.innerHTML = "사진은 3장 모두 업로드가 되어야 합니다";
             pictureErrorMsg.style.color = 'red';
 
             checkVariables.pictureCheck = 'no';

@@ -447,7 +447,7 @@ body {
 }
 
 #genderBtn {
-    width: 100px;
+    width: 120px;
 }
 
 #genderInput_container .btns_title {
@@ -457,7 +457,7 @@ body {
 
 .btns_btn {
     width: 20%;
-    min-width: 100px;
+    min-width: 80px;
     height: 40px;
     margin: 5px;
 
@@ -870,6 +870,10 @@ body {
     width: 23%;
 }
 
+#pictureBtn_1 {
+    border : 2px solid var(--point-color);
+}
+
 
 /* 테블릿 */
 @media screen and (max-width: 1023px) {
@@ -932,7 +936,7 @@ body {
     }
 
     #hobbyBtn {
-        min-width: 65px;
+        min-width: 80px;
     }
 
     #regionInput_container {
@@ -1030,6 +1034,10 @@ body {
         width: 90%;
         min-width: 0;
         max-width: 550px;
+    }
+
+    #genderBtn {
+        width: 80px;
     }
 
 }
